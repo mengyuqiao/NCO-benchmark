@@ -1,0 +1,280 @@
+Question 1
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.24% Chondromalacia of patella, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Chondromalacia of patella (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 2
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.52% Hammer toe, compared with 1.04% for control group using SGLT2i. Does treatment have causal effect to the Hammer toe (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 3
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 39.20% Chronic joint pain, compared with 29.82% for control group using SGLT2i. Does treatment have causal effect to the Chronic joint pain (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 4
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 29.61% Osteoarthritis, compared with 26.72% for control group using SGLT2i. Does treatment have causal effect to the Osteoarthritis (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 5
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.63% Contusion of knee, compared with 0.41% for control group using SGLT2i. Does treatment have causal effect to the Contusion of knee (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 6
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 23.40% Low back pain, compared with 17.72% for control group using SGLT2i. Does treatment have causal effect to the Low back pain (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 7
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.12% Abnormal posture, compared with 0.14% for control group using SGLT2i. Does treatment have causal effect to the Abnormal posture (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 8
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.16% Derangement of knee, compared with 0.62% for control group using SGLT2i. Does treatment have causal effect to the Derangement of knee (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 9
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.29% Calcaneal spur, compared with 0.96% for control group using SGLT2i. Does treatment have causal effect to the Calcaneal spur (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 10
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients using GLP-1RA (treatment group).
+- One percentage for patients using SGLT2i (control group).
+Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Your Task]
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.98% Sprain of ankle, compared with 0.42% for control group using SGLT2i. Does treatment have causal effect to the Sprain of ankle (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+

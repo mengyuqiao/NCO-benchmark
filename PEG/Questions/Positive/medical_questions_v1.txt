@@ -1,0 +1,134 @@
+Question 1
+Treatment group using GLP-1RA (treatment) had 6.96% Prev Binary Outcome Non Fatal MI, compared with 11.46% for control group using SGLT2i. Does treatment have causal effect to the Prev Binary Outcome Non Fatal MI (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 2
+Treatment group using GLP-1RA (treatment) had 6.89% Prev Binary Outcome Non Fatal Stroke, compared with 8.60% for control group using SGLT2i. Does treatment have causal effect to the Prev Binary Outcome Non Fatal Stroke (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 3
+Treatment group using GLP-1RA (treatment) had 1.21% Prev Binary Outcome CV Death, compared with 1.66% for control group using SGLT2i. Does treatment have causal effect to the Prev Binary Outcome CV Death (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 4
+Treatment group using GLP-1RA (treatment) had 1.69% Prev Binary Outcome Hospitalization For Unstable Angina, compared with 2.47% for control group using SGLT2i. Does treatment have causal effect to the Prev Binary Outcome Hospitalization For Unstable Angina (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 5
+Treatment group using GLP-1RA (treatment) had 12.83% Prev Binary Outcome MACE3, compared with 18.58% for control group using SGLT2i. Does treatment have causal effect to the Prev Binary Outcome MACE3 (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 6
+Treatment group using GLP-1RA (treatment) had 13.41% Prev Binary Outcome MACE4, compared with 19.25% for control group using SGLT2i. Does treatment have causal effect to the Prev Binary Outcome MACE4 (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 7
+Treatment group using GLP-1RA (treatment) had 2.71% Prev Visits Binary Alcohol Use Disorder, compared with 2.96% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Alcohol Use Disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 8
+Treatment group using GLP-1RA (treatment) had 26.41% Prev Visits Binary Anxiety Disorders, compared with 17.07% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Anxiety Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 9
+Treatment group using GLP-1RA (treatment) had 1.72% Prev Visits Binary Behavioral And Emotional Disorders With Onset Usually Occurring In Childhood And Adolescence, compared with 1.03% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Behavioral And Emotional Disorders With Onset Usually Occurring In Childhood And Adolescence (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 10
+Treatment group using GLP-1RA (treatment) had 3.17% Prev Visits Binary Bipolar Disorder, compared with 1.81% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Bipolar Disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 11
+Treatment group using GLP-1RA (treatment) had 1.06% Prev Visits Binary Cannabis Related Disorder, compared with 0.86% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Cannabis Related Disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 12
+Treatment group using GLP-1RA (treatment) had 22.59% Prev Visits Binary Depression, compared with 15.55% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Depression (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 13
+Treatment group using GLP-1RA (treatment) had 0.59% Prev Visits Binary Eating Disorders, compared with 0.17% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Eating Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 14
+Treatment group using GLP-1RA (treatment) had 0.27% Prev Visits Binary Intellectual Disabilities, compared with 0.20% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Intellectual Disabilities (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 15
+Treatment group using GLP-1RA (treatment) had 0.39% Prev Visits Binary Neurodevelopmental Disorders, compared with 0.25% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Neurodevelopmental Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 16
+Treatment group using GLP-1RA (treatment) had 2.33% Prev Visits Binary Opiod Use Disorder, compared with 1.76% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Opiod Use Disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 17
+Treatment group using GLP-1RA (treatment) had 2.38% Prev Visits Binary Other Mood Disorders, compared with 1.44% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Other Mood Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 18
+Treatment group using GLP-1RA (treatment) had 1.21% Prev Visits Binary Other Substance Use Disorder, compared with 1.29% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Other Substance Use Disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 19
+Treatment group using GLP-1RA (treatment) had 1.21% Prev Visits Binary Personality Disorders, compared with 0.55% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Personality Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 20
+Treatment group using GLP-1RA (treatment) had 1.52% Prev Visits Binary Schizophrenia And Other Psychotic Disorders, compared with 1.21% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Schizophrenia And Other Psychotic Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 21
+Treatment group using GLP-1RA (treatment) had 0.31% Prev Visits Binary Sedative Use Disorders, compared with 0.29% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Sedative Use Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 22
+Treatment group using GLP-1RA (treatment) had 35.83% Prev Visits Binary Sleep Disorders, compared with 26.78% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Sleep Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 23
+Treatment group using GLP-1RA (treatment) had 1.25% Prev Visits Binary Stimulant Use Disorders, compared with 1.20% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Stimulant Use Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 24
+Treatment group using GLP-1RA (treatment) had 0.02% Prev Visits Binary Substance Use Disorder, compared with 0.07% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Substance Use Disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 25
+Treatment group using GLP-1RA (treatment) had 0.59% Prev Visits Binary Suicide Ideation, compared with 0.46% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Suicide Ideation (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 26
+Treatment group using GLP-1RA (treatment) had 8.34% Prev Visits Binary Suicide Attempt, compared with 7.46% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Suicide Attempt (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 27
+Treatment group using GLP-1RA (treatment) had 9.34% Prev Visits Binary Tobaco Use Disorder, compared with 8.56% for control group using SGLT2i. Does treatment have causal effect to the Prev Visits Binary Tobaco Use Disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]

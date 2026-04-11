@@ -1,0 +1,67 @@
+Question 1
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.40% Changes in skin texture, compared with 0.21% for control group using SGLT2i. Does treatment have causal effect to the Changes in skin texture (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 2.61% Feces contents abnormal, compared with 2.22% for control group using SGLT2i. Does treatment have causal effect to the Feces contents abnormal (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 3
+Treatment group using GLP-1RA (treatment) had 6.25% Gallbladder disease, compared with 6.72% for control group using SGLT2i. Does treatment have causal effect to the Gallbladder disease (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 4
+Treatment group using GLP-1RA (treatment) had 1.66% Acute pancreatitis, compared with 2.39% for control group using SGLT2i. Does treatment have causal effect to the Acute pancreatitis (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.02% Kwashiorkor, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Kwashiorkor (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 6
+Treatment group using GLP-1RA (treatment) had 0.42% Chronic pancreatitis, compared with 0.86% for control group using SGLT2i. Does treatment have causal effect to the Chronic pancreatitis (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.31% Passing flatus, compared with 0.20% for control group using SGLT2i. Does treatment have causal effect to the Passing flatus (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.21% Cachexia, compared with 0.76% for control group using SGLT2i. Does treatment have causal effect to the Cachexia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.02% Effects of hunger, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Effects of hunger (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.30% Postviral fatigue syndrome, compared with 0.21% for control group using SGLT2i. Does treatment have causal effect to the Postviral fatigue syndrome (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 11
+Treatment group using GLP-1RA (treatment) had 34.84% Gastroesophageal reflux disease, compared with 32.80% for control group using SGLT2i. Does treatment have causal effect to the Gastroesophageal reflux disease (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 12
+Treatment group using GLP-1RA (treatment) had 2.49% Peptic ulcer disease, compared with 2.88% for control group using SGLT2i. Does treatment have causal effect to the Peptic ulcer disease (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
