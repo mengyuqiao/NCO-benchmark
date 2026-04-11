@@ -1,0 +1,27 @@
+Treatment group using BNT162b2 (treatment) had 0.67% acne, compared with 0.82% for control group. Does treatment have causal effect to the acne (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 1.67% astigmatism, compared with 0.66% for control group. Does treatment have causal effect to the astigmatism (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.08% autism or autistic disorder, compared with 0.11% for control group. Does treatment have causal effect to the autism or autistic disorder (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.16% concussion, compared with 0.26% for control group. Does treatment have causal effect to the concussion (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.62% contact dermatitis, compared with 0.43% for control group. Does treatment have causal effect to the contact dermatitis (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.87% epilepsy, compared with 0.91% for control group. Does treatment have causal effect to the epilepsy (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.51% falls, compared with 0.28% for control group. Does treatment have causal effect to the falls (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.04% foreign body in ear, compared with 0.03% for control group. Does treatment have causal effect to the foreign body in ear (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.07% impetigo, compared with 0.04% for control group. Does treatment have causal effect to the impetigo (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.56% inguinal hernia, compared with 0.45% for control group. Does treatment have causal effect to the inguinal hernia (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 1.08% injury of head, compared with 1.32% for control group. Does treatment have causal effect to the injury of head (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.12% Injury of right foot, compared with 0.10% for control group. Does treatment have causal effect to the Injury of right foot (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.00% injury of right hand, compared with 0.00% for control group. Does treatment have causal effect to the injury of right hand (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.18% insect bite, compared with 0.16% for control group. Does treatment have causal effect to the insect bite (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 1.38% myopia, compared with 0.62% for control group. Does treatment have causal effect to the myopia (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 9.70% obesity, compared with 7.37% for control group. Does treatment have causal effect to the obesity (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.50% pain in wrist, compared with 0.47% for control group. Does treatment have causal effect to the pain in wrist (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.00% plagiocephaly, compared with 0.00% for control group. Does treatment have causal effect to the plagiocephaly (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.43% scoliosis, compared with 0.39% for control group. Does treatment have causal effect to the scoliosis (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.34% seizure, compared with 0.41% for control group. Does treatment have causal effect to the seizure (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 6.69% snoring or obstructive sleep apnea, compared with 4.57% for control group. Does treatment have causal effect to the snoring or obstructive sleep apnea (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.28% sprain of ankle, compared with 0.27% for control group. Does treatment have causal effect to the sprain of ankle (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.01% tinea capitis, compared with 0.01% for control group. Does treatment have causal effect to the tinea capitis (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.14% tinea corporis, compared with 0.08% for control group. Does treatment have causal effect to the tinea corporis (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 1.16% tobaco use disorder, compared with 1.67% for control group. Does treatment have causal effect to the tobaco use disorder (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 0.39% umbilical hernia, compared with 0.37% for control group. Does treatment have causal effect to the umbilical hernia (is it a Positive Outcome)?
+Treatment group using BNT162b2 (treatment) had 1.94% wax in ear or impacted cerumen, compared with 1.29% for control group. Does treatment have causal effect to the wax in ear or impacted cerumen (is it a Positive Outcome)?

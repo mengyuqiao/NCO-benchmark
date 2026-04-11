@@ -1,0 +1,155 @@
+Question 1
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.32% Alcohol use disorder, compared with 0.78% for control group. Does treatment have causal effect to the Alcohol use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 2
+[Question]
+Treatment group using BNT162b2 (treatment) had 4.46% Anxiety disorders, compared with 5.73% for control group. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 3
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.30% Behavioral and emotional disorders with onset usually occurring in childhood and adolescence, compared with 0.71% for control group. Does treatment have causal effect to the Behavioral and emotional disorders with onset usually occurring in childhood and adolescence (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 4
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.23% Bipolar disorder, compared with 0.58% for control group. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 5
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.14% Cannabis related disorder, compared with 0.37% for control group. Does treatment have causal effect to the Cannabis related disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 6
+[Question]
+Treatment group using BNT162b2 (treatment) had 2.58% Depression, compared with 3.69% for control group. Does treatment have causal effect to the Depression (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 7
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.04% Eating Disorders, compared with 0.11% for control group. Does treatment have causal effect to the Eating Disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 8
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.07% Intellectual disabilities, compared with 0.08% for control group. Does treatment have causal effect to the Intellectual disabilities (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 9
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.06% Neurodevelopmental disorders, compared with 0.12% for control group. Does treatment have causal effect to the Neurodevelopmental disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 10
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.17% Opiod use disorder, compared with 0.43% for control group. Does treatment have causal effect to the Opiod use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 11
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.13% Other mood disorders, compared with 0.25% for control group. Does treatment have causal effect to the Other mood disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 12
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.10% Other substance use disorder, compared with 0.46% for control group. Does treatment have causal effect to the Other substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 13
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.11% Personality disorders, compared with 0.24% for control group. Does treatment have causal effect to the Personality disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 14
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.18% Schizophrenia and other psychotic disorders, compared with 0.34% for control group. Does treatment have causal effect to the Schizophrenia and other psychotic disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 15
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.01% Sedative use disorders, compared with 0.10% for control group. Does treatment have causal effect to the Sedative use disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 16
+[Question]
+Treatment group using BNT162b2 (treatment) had 3.72% Sleep disorders, compared with 3.88% for control group. Does treatment have causal effect to the Sleep disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 17
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.09% Stimulant use disorders, compared with 0.27% for control group. Does treatment have causal effect to the Stimulant use disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 18
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.01% Substance use disorder, compared with 0.03% for control group. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 19
+[Question]
+Treatment group using BNT162b2 (treatment) had 1.19% suicide attempt, compared with 1.37% for control group. Does treatment have causal effect to the suicide attempt (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 20
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.04% Suicide ideation, compared with 0.20% for control group. Does treatment have causal effect to the Suicide ideation (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 21
+[Question]
+Treatment group using BNT162b2 (treatment) had 1.04% tobaco use disorder, compared with 1.66% for control group. Does treatment have causal effect to the tobaco use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 22
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.00% CV death, compared with 0.00% for control group. Does treatment have causal effect to the CV death (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 23
+[Question]
+Treatment group using BNT162b2 (treatment) had 3.27% CV event, compared with 3.96% for control group. Does treatment have causal effect to the CV event (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 24
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.51% non fatal mi, compared with 0.64% for control group. Does treatment have causal effect to the non fatal mi (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 25
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.57% non fatal stroke, compared with 0.95% for control group. Does treatment have causal effect to the non fatal stroke (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 26
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.30% unstable angina, compared with 0.39% for control group. Does treatment have causal effect to the unstable angina (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]

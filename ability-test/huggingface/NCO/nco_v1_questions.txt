@@ -1,0 +1,431 @@
+Question 1
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Lagophthalmos, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Lagophthalmos (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 3
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.03% Lymphangioma, compared with 0.02% for control group using SGLT2i. Does treatment have causal effect to the Lymphangioma (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 4
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.31% Passing flatus, compared with 0.20% for control group using SGLT2i. Does treatment have causal effect to the Passing flatus (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.40% Changes in skin texture, compared with 0.21% for control group using SGLT2i. Does treatment have causal effect to the Changes in skin texture (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 6
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.09% Ingrowing nail, compared with 0.66% for control group using SGLT2i. Does treatment have causal effect to the Ingrowing nail (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.20% Tracheostomy present, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Tracheostomy present (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.75% Developmental delay, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Developmental delay (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.16% Derangement of knee, compared with 0.62% for control group using SGLT2i. Does treatment have causal effect to the Derangement of knee (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 11
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.88% Senile hyperkeratosis, compared with 1.55% for control group using SGLT2i. Does treatment have causal effect to the Senile hyperkeratosis (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 12
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.52% Hammer toe, compared with 1.04% for control group using SGLT2i. Does treatment have causal effect to the Hammer toe (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 13
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.52% Crohn disease, compared with 0.39% for control group using SGLT2i. Does treatment have causal effect to the Crohn disease (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 14
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Noise effects on inner ear, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Noise effects on inner ear (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 15
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.27% Opioid abuse, compared with 0.24% for control group using SGLT2i. Does treatment have causal effect to the Opioid abuse (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 16
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.75% Contact dermatitis, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Contact dermatitis (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 17
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.12% Abnormal posture, compared with 0.14% for control group using SGLT2i. Does treatment have causal effect to the Abnormal posture (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 18
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.19% Tooth loss, compared with 0.14% for control group using SGLT2i. Does treatment have causal effect to the Tooth loss (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 19
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.01% Hereditary thrombophilia, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Hereditary thrombophilia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 20
+[Question]
+Treatment group using GLP-1RA (treatment) had 4.17% Impacted cerumen, compared with 3.26% for control group using SGLT2i. Does treatment have causal effect to the Impacted cerumen (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 21
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.18% Colostomy present, compared with 0.20% for control group using SGLT2i. Does treatment have causal effect to the Colostomy present (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 22
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.30% Postviral fatigue syndrome, compared with 0.21% for control group using SGLT2i. Does treatment have causal effect to the Postviral fatigue syndrome (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 23
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.84% Regular astigmatism, compared with 1.01% for control group using SGLT2i. Does treatment have causal effect to the Regular astigmatism (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 24
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.60% Abnormal pupil, compared with 0.47% for control group using SGLT2i. Does treatment have causal effect to the Abnormal pupil (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 25
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 26
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.03% Late effect of contusion, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Late effect of contusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 27
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 28
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Foreskin deficient, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Foreskin deficient (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 29
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Jellyfish poisoning, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Jellyfish poisoning (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 30
+[Question]
+Treatment group using GLP-1RA (treatment) had 2.61% Feces contents abnormal, compared with 2.22% for control group using SGLT2i. Does treatment have causal effect to the Feces contents abnormal (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 31
+[Question]
+Treatment group using GLP-1RA (treatment) had 2.53% Melena, compared with 2.15% for control group using SGLT2i. Does treatment have causal effect to the Melena (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 32
+[Question]
+Treatment group using GLP-1RA (treatment) had 9.34% Nicotine dependence, compared with 8.56% for control group using SGLT2i. Does treatment have causal effect to the Nicotine dependence (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 33
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.43% Endometriosis, compared with 0.43% for control group using SGLT2i. Does treatment have causal effect to the Endometriosis (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 34
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Unsatisfactory tooth restoration, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Unsatisfactory tooth restoration (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 35
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.20% Foreign body in ear, compared with 0.12% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in ear (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 36
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.53% Anal and rectal polyp, compared with 1.03% for control group using SGLT2i. Does treatment have causal effect to the Anal and rectal polyp (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 37
+[Question]
+Treatment group using GLP-1RA (treatment) had 5.18% Presbyopia, compared with 2.95% for control group using SGLT2i. Does treatment have causal effect to the Presbyopia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 38
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.02% Kwashiorkor, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Kwashiorkor (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 39
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.21% Cachexia, compared with 0.76% for control group using SGLT2i. Does treatment have causal effect to the Cachexia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 40
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Injury of knee, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Injury of knee (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 41
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.63% Contusion of knee, compared with 0.41% for control group using SGLT2i. Does treatment have causal effect to the Contusion of knee (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 42
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.23% Cannabis abuse, compared with 0.26% for control group using SGLT2i. Does treatment have causal effect to the Cannabis abuse (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 43
+[Question]
+Treatment group using GLP-1RA (treatment) had 9.34% Tobacco dependence syndrome, compared with 8.56% for control group using SGLT2i. Does treatment have causal effect to the Tobacco dependence syndrome (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 44
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 45
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.63% Absent kidney, compared with 0.67% for control group using SGLT2i. Does treatment have causal effect to the Absent kidney (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 46
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.08% Anomaly of jaw size, compared with 0.02% for control group using SGLT2i. Does treatment have causal effect to the Anomaly of jaw size (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 47
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.29% Calcaneal spur, compared with 0.96% for control group using SGLT2i. Does treatment have causal effect to the Calcaneal spur (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 48
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.01% Homocystinuria, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Homocystinuria (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 49
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.02% Effects of hunger, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Effects of hunger (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 50
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 51
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.98% Sprain of ankle, compared with 0.42% for control group using SGLT2i. Does treatment have causal effect to the Sprain of ankle (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 52
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.16% Poisoning by tranquilizer, compared with 0.19% for control group using SGLT2i. Does treatment have causal effect to the Poisoning by tranquilizer (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 53
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.63% Macular drusen, compared with 0.55% for control group using SGLT2i. Does treatment have causal effect to the Macular drusen (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 54
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 55
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.01% Marfan syndrome, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Marfan syndrome (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 56
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 57
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.20% Complication of gastrostomy, compared with 0.21% for control group using SGLT2i. Does treatment have causal effect to the Complication of gastrostomy (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 58
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.33% Lipid storage disease, compared with 0.14% for control group using SGLT2i. Does treatment have causal effect to the Lipid storage disease (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 59
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.24% Chondromalacia of patella, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Chondromalacia of patella (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 60
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.07% Genetic disorder carrier, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Genetic disorder carrier (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 61
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 62
+[Question]
+Treatment group using GLP-1RA (treatment) had 2.64% Nontoxic multinodular goiter, compared with 1.39% for control group using SGLT2i. Does treatment have causal effect to the Nontoxic multinodular goiter (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 63
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.02% Psychalgia, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Psychalgia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 64
+[Question]
+Treatment group using GLP-1RA (treatment) had 3.36% Tear film insufficiency, compared with 2.14% for control group using SGLT2i. Does treatment have causal effect to the Tear film insufficiency (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 65
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 66
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.11% Strain of rotator cuff capsule, compared with 0.17% for control group using SGLT2i. Does treatment have causal effect to the Strain of rotator cuff capsule (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 67
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 68
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.97% Minimal cognitive impairment, compared with 1.02% for control group using SGLT2i. Does treatment have causal effect to the Minimal cognitive impairment (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 69
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 70
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.01% Burn of forearm, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Burn of forearm (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 71
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Ptotic breast, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Ptotic breast (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]
+
+Question 72
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.68% Absence of breast, compared with 0.54% for control group using SGLT2i. Does treatment have causal effect to the Absence of breast (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, "yes" or "no"]

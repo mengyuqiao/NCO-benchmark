@@ -1,0 +1,29 @@
+Question {number}
+[Background]
+We compare two cohorts regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (tens of thousands of adults), and event rates for most outcomes are generally low—often within single-digit percentages or below 1%.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Few-shot examples]
+- {nco query} → no.
+- {positive query} → yes.
+...
+[Your Task]
+[Question]
+{nco query}
+Answer: [Your answer, "yes" or "no"]

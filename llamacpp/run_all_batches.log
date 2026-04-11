@@ -1,0 +1,7 @@
+[ENV] CUDA_VISIBLE_DEVICES=0,1,2,3
+[BOOT] Loading models: ['deepseek-ai/DeepSeek-R1-Distill-Llama-8B', 'tiiuae/Falcon3-7B-Instruct', 'google/gemma-3-4b-it', 'Qwen/Qwen3-VL-8B-Instruct'] with device map {'deepseek-ai/DeepSeek-R1-Distill-Llama-8B': 0, 'tiiuae/Falcon3-7B-Instruct': 1, 'google/gemma-3-4b-it': 2, 'Qwen/Qwen3-VL-8B-Instruct': 3}
+[CFG] NUM_ROUNDS=5, N_SAMPLES=10, RESUME=ON
+[INIT] Loading Standard model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B on cuda:0
+[INIT] Loading Standard model: tiiuae/Falcon3-7B-Instruct on cuda:1
+[INIT] Loading Standard model: google/gemma-3-4b-it on cuda:2
+[INIT] Loading Qwen model: Qwen/Qwen3-VL-8B-Instruct on cuda:3

@@ -1,0 +1,727 @@
+Question 1
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.67% acne, compared with 0.82% for control group. Does treatment have causal effect to the acne (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 2
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 1.67% astigmatism, compared with 0.66% for control group. Does treatment have causal effect to the astigmatism (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 3
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.08% autism or autistic disorder, compared with 0.11% for control group. Does treatment have causal effect to the autism or autistic disorder (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 4
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.16% concussion, compared with 0.26% for control group. Does treatment have causal effect to the concussion (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 5
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.62% contact dermatitis, compared with 0.43% for control group. Does treatment have causal effect to the contact dermatitis (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 6
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.87% epilepsy, compared with 0.91% for control group. Does treatment have causal effect to the epilepsy (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 7
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.51% falls, compared with 0.28% for control group. Does treatment have causal effect to the falls (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 8
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.04% foreign body in ear, compared with 0.03% for control group. Does treatment have causal effect to the foreign body in ear (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 9
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.07% impetigo, compared with 0.04% for control group. Does treatment have causal effect to the impetigo (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 10
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.56% inguinal hernia, compared with 0.45% for control group. Does treatment have causal effect to the inguinal hernia (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 11
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 1.08% injury of head, compared with 1.32% for control group. Does treatment have causal effect to the injury of head (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 12
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.12% Injury of right foot, compared with 0.10% for control group. Does treatment have causal effect to the Injury of right foot (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 13
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.00% injury of right hand, compared with 0.00% for control group. Does treatment have causal effect to the injury of right hand (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 14
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.18% insect bite, compared with 0.16% for control group. Does treatment have causal effect to the insect bite (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 15
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 1.38% myopia, compared with 0.62% for control group. Does treatment have causal effect to the myopia (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 16
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 9.70% obesity, compared with 7.37% for control group. Does treatment have causal effect to the obesity (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 17
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.50% pain in wrist, compared with 0.47% for control group. Does treatment have causal effect to the pain in wrist (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 18
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.00% plagiocephaly, compared with 0.00% for control group. Does treatment have causal effect to the plagiocephaly (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 19
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.43% scoliosis, compared with 0.39% for control group. Does treatment have causal effect to the scoliosis (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 20
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.34% seizure, compared with 0.41% for control group. Does treatment have causal effect to the seizure (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 21
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 6.69% snoring or obstructive sleep apnea, compared with 4.57% for control group. Does treatment have causal effect to the snoring or obstructive sleep apnea (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 22
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.28% sprain of ankle, compared with 0.27% for control group. Does treatment have causal effect to the sprain of ankle (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 23
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.01% tinea capitis, compared with 0.01% for control group. Does treatment have causal effect to the tinea capitis (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 24
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.14% tinea corporis, compared with 0.08% for control group. Does treatment have causal effect to the tinea corporis (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 25
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 1.16% tobaco use disorder, compared with 1.67% for control group. Does treatment have causal effect to the tobaco use disorder (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 26
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 0.39% umbilical hernia, compared with 0.37% for control group. Does treatment have causal effect to the umbilical hernia (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+
+Question 27
+[Background]
+We compare two patient groups within the same cohort regarding COVID-19 vaccination:
+- Treatment: Individuals vaccinated with BNT162b2 (Pfizer-BioNTech COVID-19 vaccine)
+- Control: Individuals with no documented COVID-19 vaccination.
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether vaccination has a causal effect on that outcome.
+You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
+- One percentage for patients who received the COVID-19 vaccine (treatment group).
+- One percentage for patients who were unvaccinated (control group).
+Your task is to determine whether vaccination has a causal effect on that outcome.
+[Cohort Description]
+Adults aged 18 years or older observed between January 1 and December 31, 2022.
+The treatment group received the first dose of BNT162b2 (Pfizer-BioNTech COVID-19 vaccine) during this period, while the control group remained unvaccinated.
+All individuals had no prior COVID-19 infection or vaccination before the study start and had at least one healthcare visit within 18 months to 7 days before the index date.
+[Instruction]
+- Judge whether vaccination causally influences the outcome.
+- Note that both groups come from a large population cohort (13,635 vaccinated and 891,968 unvaccinated adults), and event rates for most outcomes are generally low — for example, below 10% or even 1%. A low or high absolute event rate does not necessarily imply the absence or presence of a causal relationship.
+- "Yes" = Positive Outcome (OOI); "No" = Negative Control Outcome (NCO).
+- Reply with only "yes" or "no".
+[Your Task]
+[Question]
+Treatment group using BNT162b2 (treatment) had 1.94% wax in ear or impacted cerumen, compared with 1.29% for control group. Does treatment have causal effect to the wax in ear or impacted cerumen (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
