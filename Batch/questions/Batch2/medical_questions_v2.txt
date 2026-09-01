@@ -6,10 +6,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -22,6 +18,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -34,10 +31,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -50,6 +43,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -62,10 +56,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -78,6 +68,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -90,10 +81,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -106,6 +93,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -118,10 +106,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -134,6 +118,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -146,10 +131,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -162,6 +143,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -174,10 +156,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -190,6 +168,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -202,10 +181,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -218,6 +193,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -230,10 +206,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -246,6 +218,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -258,10 +231,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -274,6 +243,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -286,10 +256,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -302,6 +268,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]

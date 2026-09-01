@@ -6,10 +6,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -22,13 +18,13 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Few-shot Examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 1.21% CV Death, compared with 1.66% for control group using SGLT2i. Does treatment have causal effect to the CV Death (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -41,10 +37,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -56,14 +48,14 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
-[Few-shot examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
+[Few-shot Examples]
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 0.01% Homocystinuria, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Homocystinuria (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -76,10 +68,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -92,13 +80,13 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Few-shot Examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 13.41% MACE4, compared with 19.25% for control group using SGLT2i. Does treatment have causal effect to the MACE4 (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -111,10 +99,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -127,13 +111,13 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Few-shot Examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 1.69% Hospitalization For Unstable Angina, compared with 2.47% for control group using SGLT2i. Does treatment have causal effect to the Hospitalization For Unstable Angina (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -146,10 +130,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -162,13 +142,13 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Few-shot Examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 6.96% Non Fatal MI, compared with 11.46% for control group using SGLT2i. Does treatment have causal effect to the Non Fatal MI (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -181,10 +161,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -197,13 +173,13 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Few-shot Examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 12.83% MACE3, compared with 18.58% for control group using SGLT2i. Does treatment have causal effect to the MACE3 (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
@@ -216,115 +192,6 @@ We compare two treatments for type 2 diabetes:
 [Task Description]
 You’ll receive an outcome and the percentage of affected patients in each group.
 Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
-[Cohort Description]
-Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
-All had a prior diabetes diagnosis.
-GLP-1RA users: mean age 58.0, BMI 37.4.
-SGLT2i users: mean age 64.6, BMI 32.8.
-Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
-[Instruction]
-- Judge whether the treatments causally influence the outcome.
-- Both treatments are expected to behave similarly (either both yes or both no).
-- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
-[Few-shot examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
-[Your Task]
-[Question]
-Treatment group using GLP-1RA (treatment) had 0.01% Hereditary thrombophilia, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Hereditary thrombophilia (is it a Positive Outcome)?
-Answer: [Your answer, "yes" or "no"]
-
-Question 8
-[Background]
-We compare two treatments for type 2 diabetes:
-- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
-- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
-[Task Description]
-You’ll receive an outcome and the percentage of affected patients in each group.
-Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
-[Cohort Description]
-Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
-All had a prior diabetes diagnosis.
-GLP-1RA users: mean age 58.0, BMI 37.4.
-SGLT2i users: mean age 64.6, BMI 32.8.
-Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
-[Instruction]
-- Judge whether the treatments causally influence the outcome.
-- Both treatments are expected to behave similarly (either both yes or both no).
-- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
-[Few-shot examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
-[Your Task]
-[Question]
-Treatment group using GLP-1RA (treatment) had 0.03% Lymphangioma, compared with 0.02% for control group using SGLT2i. Does treatment have causal effect to the Lymphangioma (is it a Positive Outcome)?
-Answer: [Your answer, "yes" or "no"]
-
-Question 9
-[Background]
-We compare two treatments for type 2 diabetes:
-- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
-- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
-[Task Description]
-You’ll receive an outcome and the percentage of affected patients in each group.
-Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
-[Cohort Description]
-Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
-All had a prior diabetes diagnosis.
-GLP-1RA users: mean age 58.0, BMI 37.4.
-SGLT2i users: mean age 64.6, BMI 32.8.
-Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
-[Instruction]
-- Judge whether the treatments causally influence the outcome.
-- Both treatments are expected to behave similarly (either both yes or both no).
-- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
-[Few-shot examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
-[Your Task]
-[Question]
-Treatment group using GLP-1RA (treatment) had 0.01% Marfan syndrome, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Marfan syndrome (is it a Positive Outcome)?
-Answer: [Your answer, "yes" or "no"]
-
-Question 10
-[Background]
-We compare two treatments for type 2 diabetes:
-- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
-- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
-[Task Description]
-You’ll receive an outcome and the percentage of affected patients in each group.
-Decide whether these treatments have a causal effect on that outcome.
-You will receive a query describing an outcome and the proportion of patients in each group who experienced it:
-- One percentage for patients using GLP-1RA (treatment group).
-- One percentage for patients using SGLT2i (control group).
-Your task is to determine whether the treatments (GLP-1RA and SGLT2i) have a causal effect on that outcome.
 [Cohort Description]
 Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
 All had a prior diabetes diagnosis.
@@ -337,13 +204,106 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
 - Reply with only “yes” or “no.”
 [Few-shot Examples]
-- Treatment group using GLP-1RA (treatment) had 0.06% Foreign body in orifice, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the Foreign body in orifice (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 0.01% Toxic effect of lead compound, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Toxic effect of lead compound (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 1.29% Epidermoid cyst, compared with 0.58% for control group using SGLT2i. Does treatment have causal effect to the Epidermoid cyst (is it a Positive Outcome)? - no
-- Treatment group using GLP-1RA (treatment) had 78.37% Hypertension, compared with 84.71% for control group using SGLT2i. Does treatment have causal effect to the Hypertension (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 78.09% Hyperlipidemia, compared with 84.45% for control group using SGLT2i. Does treatment have causal effect to the Hyperlipidemia (is it a Positive Outcome)? - yes
-- Treatment group using GLP-1RA (treatment) had 64.14% Obesity, compared with 44.50% for control group using SGLT2i. Does treatment have causal effect to the Obesity (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
 [Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.01% Hereditary thrombophilia, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Hereditary thrombophilia (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 8
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Few-shot Examples]
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
+[Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.03% Lymphangioma, compared with 0.02% for control group using SGLT2i. Does treatment have causal effect to the Lymphangioma (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 9
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Few-shot Examples]
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
+[Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.01% Marfan syndrome, compared with 0.01% for control group using SGLT2i. Does treatment have causal effect to the Marfan syndrome (is it a Positive Outcome)?
+Answer: [Your answer, "yes" or "no"]
+
+Question 10
+[Background]
+We compare two treatments for type 2 diabetes:
+- Treatment: GLP-1 Receptor Agonists (GLP-1RA)
+- Control: Sodium-Glucose Cotransporter-2 Inhibitors (SGLT2i)
+[Task Description]
+You’ll receive an outcome and the percentage of affected patients in each group.
+Decide whether these treatments have a causal effect on that outcome.
+[Cohort Description]
+Adults with type 2 diabetes who began either GLP-1RA or SGLT2i.
+All had a prior diabetes diagnosis.
+GLP-1RA users: mean age 58.0, BMI 37.4.
+SGLT2i users: mean age 64.6, BMI 32.8.
+Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
+[Instruction]
+- Judge whether the treatments causally influence the outcome.
+- Both treatments are expected to behave similarly (either both yes or both no).
+- “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
+- Reply with only “yes” or “no.”
+[Few-shot Examples]
+- Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 1.79% Deviated nasal septum, compared with 1.16% for control group using SGLT2i. Does treatment have causal effect to the Deviated nasal septum (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 0.13% Acquired keratoderma, compared with 0.08% for control group using SGLT2i. Does treatment have causal effect to the Acquired keratoderma (is it a Positive Outcome)? - no
+- Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
+- Treatment group using GLP-1RA (treatment) had 19.87% Chronic kidney disease, compared with 31.81% for control group using SGLT2i. Does treatment have causal effect to the Chronic kidney disease (is it a Positive Outcome)? - yes
+[Your Task]
+You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
 Treatment group using GLP-1RA (treatment) had 6.89% Non Fatal Stroke, compared with 8.60% for control group using SGLT2i. Does treatment have causal effect to the Non Fatal Stroke (is it a Positive Outcome)?
 Answer: [Your answer, "yes" or "no"]
