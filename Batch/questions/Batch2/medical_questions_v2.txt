@@ -16,7 +16,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -41,7 +41,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -66,7 +66,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -91,7 +91,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -116,7 +116,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -141,7 +141,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -166,7 +166,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -191,7 +191,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -216,7 +216,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -241,7 +241,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]
@@ -266,7 +266,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Your Task]
 You should use pre-trained or real-world medical knowledge to determine whether the treatment has a causal effect on the outcome. First, explain what the treatment is and what the outcome represents in terms of clinical meaning or pathophysiology. Then, analyze whether there is a plausible causal mechanism linking the treatment to the outcome. Base your final answer on this reasoning.
 [Question]

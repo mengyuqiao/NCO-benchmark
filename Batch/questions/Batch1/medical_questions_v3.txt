@@ -16,7 +16,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -44,7 +44,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -72,7 +72,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -100,7 +100,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -128,7 +128,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -156,7 +156,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -184,7 +184,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -212,7 +212,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -240,7 +240,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -268,7 +268,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -296,7 +296,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
@@ -324,7 +324,7 @@ Charlson Comorbidity Index ≥ 3 in 65.2% (GLP-1RA) and 68.5% (SGLT2i).
 - Judge whether the treatments causally influence the outcome.
 - Both treatments are expected to behave similarly (either both yes or both no).
 - “Yes” = Positive Outcome (OOI); “No” = Negative Control Outcome (NCO).
-- Reply with only “yes” or “no.”
+- After your reasoning, provide a final answer of either "yes" or "no".
 [Few-shot Examples]
 - Treatment group using GLP-1RA (treatment) had 0.99% Ganglion cyst, compared with 0.44% for control group using SGLT2i. Does treatment have causal effect to the Ganglion cyst (is it a Positive Outcome)? - no
 - Treatment group using GLP-1RA (treatment) had 94.81% Type 2 diabetes mellitus, compared with 96.68% for control group using SGLT2i. Does treatment have causal effect to the Type 2 diabetes mellitus (is it a Positive Outcome)? - yes
