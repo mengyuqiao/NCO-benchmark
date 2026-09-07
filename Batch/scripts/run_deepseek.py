@@ -9,18 +9,32 @@ import csv, re, time, os
 # ========= 可调参数（支持环境变量覆盖） =========
 # MODEL  = os.getenv("MODEL", "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B")
 MODEL  = os.getenv("MODEL", "deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
-QUESTIONS_ROOT = Path(os.getenv("QUESTIONS_ROOT", "questions"))
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent.parent
+
+QUESTIONS_ROOT = Path(
+    os.getenv(
+        "QUESTIONS_ROOT",
+        str(REPO_ROOT / "Batch" / "questions")
+    )
+)
 MODEL_TAG = os.getenv("MODEL_TAG", "deepseek")
-OUTROOT = Path(os.getenv("OUTROOT", "results"))
+OUTROOT = Path(
+    os.getenv(
+        "OUTROOT",
+        str(REPO_ROOT / "results")
+    )
+)
+NUM_RUNS = int(os.getenv("NUM_RUNS", "10"))
 OUTROOT.mkdir(parents=True, exist_ok=True)
 
 # Hugging Face 生成配置
 GEN_CFG = {
-    "max_new_tokens": int(os.getenv("MAX_NEW_TOKENS", "4096")),
-    "num_return_sequences": int(os.getenv("NUM_RETURN_SEQUENCES", "10")),  # 每题生成10条回答
+    "max_new_tokens": int(os.getenv("MAX_NEW_TOKENS", "2048")),
+    "num_return_sequences": 1,
     "do_sample": True,
-    "temperature": float(os.getenv("TEMPERATURE", "0.7")),
-    "top_p": float(os.getenv("TOP_P", "0.95")),
+    "temperature": float(os.getenv("TEMPERATURE", "1.0")),
+    "top_p": float(os.getenv("TOP_P", "1.0")),
     "return_full_text": False,
 }
 
@@ -101,27 +115,73 @@ def main():
             print(f"  -> {file.name}: {len(questions)} questions")
 
             ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-            out_csv = out_dir / f"{file.stem}_multi{GEN_CFG['num_return_sequences']}_{ts}.csv"
+            out_csv = out_dir / f"{file.stem}_{NUM_RUNS}runs_{ts}.csv"
 
             with out_csv.open("w", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
-                writer.writerow(["batch","version","file","question_id","prompt","response_id","response"])
+                writer.writerow([
+                    "batch",
+                    "version",
+                    "file",
+                    "run_id",
+                    "question_id",
+                    "prompt",
+                    "response"
+                ])
 
-                for idx, (qid, qtext) in enumerate(questions, start=1):
-                    prompt = qtext.strip()
-                    messages = [{"role": "user", "content": prompt}]
+                for run_id in range(1, NUM_RUNS + 1):
+                    print(f"    ▶ Independent run {run_id}/{NUM_RUNS}")
 
-                    try:
-                        outputs = pipe(messages, **GEN_CFG)
-                        for j, out in enumerate(outputs, start=1):
-                            writer.writerow([batch_name, f"v{v}", file.name, qid, prompt, j, out["generated_text"]])
-                        print(f"    ✅ {batch_name} {file.name} Q{idx}: got {len(outputs)} responses")
-                    except Exception as e:
-                        writer.writerow([batch_name, f"v{v}", file.name, qid, prompt, "-", f"[ERROR] {e}"])
-                        print(f"    ⚠️  {batch_name} {file.name} Q{idx} failed: {e}")
+                    for idx, (qid, qtext) in enumerate(questions, start=1):
+                        prompt = qtext.strip()
+                        messages = [{"role": "user", "content": prompt}]
 
-                    f.flush()
-                    time.sleep(0.05)
+                        try:
+                            outputs = pipe(messages, **GEN_CFG)
+
+                            if not isinstance(outputs, list):
+                                outputs = [outputs]
+
+                            if len(outputs) != 1:
+                                raise RuntimeError(
+                                    f"Expected exactly one response, got {len(outputs)}"
+                                )
+
+                            out = outputs[0]
+
+                            writer.writerow([
+                                batch_name,
+                                f"v{v}",
+                                file.name,
+                                run_id,
+                                qid,
+                                prompt,
+                                out["generated_text"]
+                            ])
+
+                            print(
+                                f"      ✅ run={run_id} "
+                                f"{batch_name} {file.name} Q{idx}"
+                            )
+
+                        except Exception as e:
+                            writer.writerow([
+                                batch_name,
+                                f"v{v}",
+                                file.name,
+                                run_id,
+                                qid,
+                                prompt,
+                                f"[ERROR] {e}"
+                            ])
+
+                            print(
+                                f"      ⚠️ run={run_id} "
+                                f"{batch_name} {file.name} Q{idx} failed: {e}"
+                            )
+
+                        f.flush()
+                        time.sleep(0.05)
 
             print(f"    🎯 Saved {out_csv.relative_to(OUTROOT)}")
 

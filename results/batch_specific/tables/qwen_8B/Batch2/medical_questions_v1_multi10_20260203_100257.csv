@@ -1,0 +1,501 @@
+model_tag,batch,version,file,question_id,prompt,response_id,response,extracted_answer,answer
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,1,"Question 1
+Treatment group using GLP-1RA (treatment) had 27.35% Major depressive disorder, compared with 21.44% for control group using SGLT2i. Does treatment have causal effect to the Major depressive disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,2,"Question 2
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.00% Bizarre personal appearance, compared with 0.00% for control group using SGLT2i. Does treatment have causal effect to the Bizarre personal appearance (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,3,"Question 3
+Treatment group using GLP-1RA (treatment) had 0.93% Schizophrenia, compared with 0.99% for control group using SGLT2i. Does treatment have causal effect to the Schizophrenia (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,4,"Question 4
+Treatment group using GLP-1RA (treatment) had 3.70% Bipolar disorder, compared with 2.40% for control group using SGLT2i. Does treatment have causal effect to the Bipolar disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,5,"Question 5
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.06% Malingering, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Malingering (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,6,"Question 6
+Treatment group using GLP-1RA (treatment) had 28.07% Anxiety disorders, compared with 20.78% for control group using SGLT2i. Does treatment have causal effect to the Anxiety disorders (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,7,"Question 7
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.10% Social exclusion, compared with 0.11% for control group using SGLT2i. Does treatment have causal effect to the Social exclusion (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,8,"Question 8
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.44% High risk sexual behavior, compared with 0.09% for control group using SGLT2i. Does treatment have causal effect to the High risk sexual behavior (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,yes,yes,yes
+qwen_8B,Batch2,v1,medical_questions_v1.txt,9,"Question 9
+[Question]
+Treatment group using GLP-1RA (treatment) had 0.04% Symbolic dysfunction, compared with 0.04% for control group using SGLT2i. Does treatment have causal effect to the Symbolic dysfunction (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,10,"Question 10
+[Question]
+Treatment group using GLP-1RA (treatment) had 1.07% Inadequate sleep hygiene, compared with 0.34% for control group using SGLT2i. Does treatment have causal effect to the Inadequate sleep hygiene (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",1,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",2,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",3,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",4,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",5,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",6,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",7,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",8,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",9,no,no,no
+qwen_8B,Batch2,v1,medical_questions_v1.txt,11,"Question 11
+Treatment group using GLP-1RA (treatment) had 16.84% Substance use disorder, compared with 17.30% for control group using SGLT2i. Does treatment have causal effect to the Substance use disorder (is it a Positive Outcome)?
+Don't give explanations, reply with only “yes” or “no”.
+Answer: [Your answer, ""yes"" or ""no""]",10,no,no,no

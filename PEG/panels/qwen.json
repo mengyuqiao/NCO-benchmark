@@ -1,0 +1,37 @@
+{
+  "panel_name": "Qwen-Panel",
+  "architecture": "rolling_review",
+  "num_runs": 10,
+  "agents": [
+    {
+      "agent_id": "qwen_1",
+      "provider": "hf_multimodal",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "device": 0
+    },
+    {
+      "agent_id": "qwen_2",
+      "provider": "hf_multimodal",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "device": 0
+    },
+    {
+      "agent_id": "qwen_3",
+      "provider": "hf_multimodal",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "device": 0
+    },
+    {
+      "agent_id": "qwen_4",
+      "provider": "hf_multimodal",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "device": 0
+    },
+    {
+      "agent_id": "qwen_5",
+      "provider": "hf_multimodal",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "device": 0
+    }
+  ]
+}

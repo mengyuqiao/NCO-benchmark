@@ -1,0 +1,1794 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import argparse
+import os
+import re
+from pathlib import Path
+from typing import Dict, Optional, Tuple
+
+import pandas as pd
+
+
+BATCHES = [
+    f"Batch{i}"
+    for i in range(1, 6)
+]
+
+VERSIONS = [
+    f"v{i}"
+    for i in range(1, 6)
+]
+
+PROMPT_TYPES = {
+    "v1": "Plain",
+    "v2": "System prompt",
+    "v3": "2-shot",
+    "v4": "5-shot",
+    "v5": "10-shot",
+}
+
+
+# ============================================================
+# Label semantics
+# ============================================================
+
+# Paper definition:
+#
+# model identifies an NCO
+#          ↓
+# positive prediction
+#
+POSITIVE_LABEL = "no"
+NEGATIVE_LABEL = "yes"
+
+
+VERSION_RE = re.compile(
+    r"(?:^|[_-])v([1-5])(?:[_\-.]|$)",
+    re.IGNORECASE,
+)
+
+BATCH_RE = re.compile(
+    r"^Batch([1-5])$",
+    re.IGNORECASE,
+)
+
+
+# Raw response fields used by our different runners.
+RESPONSE_COLUMNS = [
+    "final_response",
+    "response",
+    "raw_response",
+    "judge_response",
+    "answer",
+]
+
+
+# Never recursively evaluate evaluator outputs.
+GENERATED_OUTPUT_FILES = {
+    "item_predictions.csv",
+    "parse_failures.csv",
+    "per_batch_run_metrics.csv",
+    "per_run_metrics.csv",
+    "summary_metrics.csv",
+    "accuracy.csv",
+}
+
+
+# ============================================================
+# CLI
+# ============================================================
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Evaluate NCO benchmark outputs "
+            "with NCO as the positive class."
+        )
+    )
+
+    parser.add_argument(
+        "--results-root",
+        type=Path,
+        default=Path(
+            os.getenv(
+                "RESULTS_ROOT",
+                "./results",
+            )
+        ),
+        help=(
+            "Root containing one subdirectory "
+            "per model/panel."
+        ),
+    )
+
+    parser.add_argument(
+        "--gold-root",
+        type=Path,
+        default=(
+            Path(__file__)
+            .resolve()
+            .parent
+            / "questions"
+        ),
+        help=(
+            "Canonical gold root: "
+            "Batch/questions"
+        ),
+    )
+
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=None,
+        help=(
+            "Evaluation output directory. "
+            "Default: <results-root>/evaluation"
+        ),
+    )
+
+    parser.add_argument(
+        "--expected-runs",
+        type=int,
+        default=10,
+        help=(
+            "Expected number of independent "
+            "paper runs."
+        ),
+    )
+
+    parser.add_argument(
+        "--allow-incomplete",
+        action="store_true",
+        help=(
+            "Allow partial experiments. "
+            "For debugging only; do not use "
+            "for paper tables."
+        ),
+    )
+
+    return parser.parse_args()
+
+
+# ============================================================
+# Strict binary parsing
+# ============================================================
+
+def parse_gold_line(
+    text: str,
+) -> Optional[str]:
+    """
+    Gold files must contain one literal yes/no
+    label per line.
+    """
+
+    if not isinstance(
+        text,
+        str,
+    ):
+        return None
+
+    s = text.strip().lower()
+
+    match = re.fullmatch(
+        r"[\s\*`_'\"\[\]()]*?"
+        r"(yes|no)"
+        r"[\s\*`_'\"\[\]().,!?:;-]*",
+        s,
+    )
+
+    if match:
+        return match.group(1)
+
+    return None
+
+
+def parse_binary_response(
+    raw,
+) -> Tuple[Optional[str], str]:
+    """
+    Strict final-answer parser.
+
+    We deliberately do NOT search for the first
+    arbitrary yes/no token appearing in reasoning.
+
+    Accepted:
+        yes
+        No.
+        Final Answer: no
+        Answer is yes
+        ...
+        Therefore, no.
+
+    Not accepted:
+        "There is no plausible causal pathway..."
+        unless a final classification is also provided.
+    """
+
+    if not isinstance(
+        raw,
+        str,
+    ):
+        return None, "non_string"
+
+    text = raw.strip()
+
+    decision_text = text
+
+    if "</think>" in text.lower():
+        parts = re.split(
+            r"</think>",
+            text,
+            flags=re.IGNORECASE,
+        )
+
+        decision_text = (
+            parts[-1].strip()
+        )
+
+        if not decision_text:
+            return None, "empty_after_think"
+
+    if not text:
+        return None, "empty"
+
+    # --------------------------------------------------------
+    # Case 1:
+    # entire output is simply yes/no.
+    # --------------------------------------------------------
+
+    exact = re.fullmatch(
+        r"[\s\*`_'\"\[\]()]*?"
+        r"(yes|no)"
+        r"[\s\*`_'\"\[\]().,!?:;-]*",
+        decision_text,
+        flags=re.IGNORECASE,
+    )
+
+    if exact:
+        return (
+            exact.group(1).lower(),
+            "exact_yesno",
+        )
+
+    # --------------------------------------------------------
+    # Case 2:
+    # explicit final-answer marker.
+    # --------------------------------------------------------
+
+    explicit_pattern = re.compile(
+        r"\b(?:"
+        r"final\s+answer|"
+        r"final\s+classification|"
+        r"answer|"
+        r"classification|"
+        r"conclusion"
+        r")"
+        r"\s*"
+        r"(?:is\s*)?"
+        r"(?:[:=\-]\s*)?"
+        r"[\*`_'\"\s]*"
+        r"(yes|no)\b",
+        flags=re.IGNORECASE,
+    )
+
+    explicit = list(
+        explicit_pattern.finditer(
+            decision_text
+        )
+    )
+
+    if explicit:
+        return (
+            explicit[-1]
+            .group(1)
+            .lower(),
+            "explicit_final",
+        )
+
+    # --------------------------------------------------------
+    # Case 3:
+    # visible final response begins with an explicit
+    # yes/no classification followed by punctuation.
+    #
+    # Accepted:
+    #     Yes, based on ...
+    #     No. The evidence ...
+    #     Yes: ...
+    #
+    # Requiring punctuation prevents phrases such as
+    # "No plausible mechanism..." from being mistaken
+    # for a binary classification.
+    # --------------------------------------------------------
+
+    leading = re.match(
+        r"^\s*[\*`_'\">-]*\s*"
+        r"(yes|no)"
+        r"\s*[,.:;!?-]",
+        decision_text,
+        flags=re.IGNORECASE,
+    )
+
+    if leading:
+        return (
+            leading.group(1).lower(),
+            "leading_final_yesno",
+        )
+
+    # --------------------------------------------------------
+    # Case 4:
+    # final non-empty line clearly states answer.
+    # --------------------------------------------------------
+
+    lines = [
+        line.strip()
+        for line
+        in decision_text.splitlines()
+        if line.strip()
+    ]
+
+    if lines:
+        last = lines[-1]
+
+        final_line = re.fullmatch(
+            r"(?:[\*`_'>\-]+\s*)?"
+            r"(?:"
+            r"(?:therefore|thus|overall|"
+            r"consequently|so)"
+            r"\s*[:,\-]?\s*"
+            r")?"
+            r"[\*`_'\"\s]*"
+            r"(yes|no)"
+            r"[\*`_'\".!?;:\s]*",
+            last,
+            flags=re.IGNORECASE,
+        )
+
+        if final_line:
+            return (
+                final_line
+                .group(1)
+                .lower(),
+                "final_line",
+            )
+
+    return None, "unparseable"
+
+
+# ============================================================
+# Gold answers
+# ============================================================
+
+def locate_gold_file(
+    gold_root: Path,
+    batch: str,
+    version: str,
+) -> Path:
+    """
+    Canonical layout:
+
+        Batch/questions/
+        └── Batch1/
+            ├── medical_answers_v1.txt
+            ├── medical_answers_v2.txt
+            └── ...
+    """
+
+    path = (
+        gold_root
+        / batch
+        / f"medical_answers_{version}.txt"
+    )
+
+    if not path.exists():
+        raise FileNotFoundError(
+            "Missing gold file: "
+            f"{path}"
+        )
+
+    return path
+
+
+def load_gold(
+    gold_root: Path,
+):
+    """
+    Return gold labels keyed by:
+
+        (batch, version)
+
+    Example:
+        gold[("Batch1", "v1")][1] == "no"
+    """
+
+    gold = {}
+
+    for batch in BATCHES:
+
+        reference_labels = None
+
+        for version in VERSIONS:
+
+            path = locate_gold_file(
+                gold_root,
+                batch,
+                version,
+            )
+
+            raw_lines = [
+                line
+                for line
+                in path.read_text(
+                    encoding="utf-8"
+                ).splitlines()
+                if line.strip()
+            ]
+
+            labels = [
+                parse_gold_line(line)
+                for line
+                in raw_lines
+            ]
+
+            bad = [
+                i + 1
+                for i, label
+                in enumerate(labels)
+                if label is None
+            ]
+
+            if bad:
+                raise ValueError(
+                    f"Gold file {path} "
+                    "contains non-binary labels "
+                    f"at lines {bad[:10]}."
+                )
+
+            gold[
+                (batch, version)
+            ] = {
+                qid: label
+                for qid, label
+                in enumerate(
+                    labels,
+                    start=1,
+                )
+            }
+
+            # Gold labels should not depend on
+            # the prompt condition.
+            if reference_labels is None:
+                reference_labels = labels
+
+            elif labels != reference_labels:
+                raise ValueError(
+                    f"Gold labels differ across "
+                    f"prompt versions in {batch}. "
+                    f"Unexpected difference found "
+                    f"in {path}."
+                )
+
+    return gold
+
+
+# ============================================================
+# Metadata parsing
+# ============================================================
+
+def normalize_batch(
+    value,
+) -> Optional[str]:
+
+    if not isinstance(
+        value,
+        str,
+    ):
+        return None
+
+    match = BATCH_RE.fullmatch(
+        value.strip()
+    )
+
+    if not match:
+        return None
+
+    return (
+        f"Batch{match.group(1)}"
+    )
+
+
+def normalize_version(
+    value,
+) -> Optional[str]:
+
+    if value is None:
+        return None
+
+    s = str(
+        value
+    ).strip().lower()
+
+    match = re.fullmatch(
+        r"v?([1-5])",
+        s,
+    )
+
+    if not match:
+        return None
+
+    return (
+        f"v{match.group(1)}"
+    )
+
+
+def infer_batch_from_path(
+    path: Path,
+) -> Optional[str]:
+
+    for part in reversed(
+        path.parts
+    ):
+        batch = normalize_batch(
+            part
+        )
+
+        if batch:
+            return batch
+
+    return None
+
+
+def infer_version_from_path(
+    path: Path,
+) -> Optional[str]:
+
+    match = VERSION_RE.search(
+        path.name
+    )
+
+    if not match:
+        return None
+
+    return (
+        f"v{match.group(1)}"
+    )
+
+
+def select_response_column(
+    df: pd.DataFrame,
+) -> str:
+
+    for column in RESPONSE_COLUMNS:
+        if column in df.columns:
+            return column
+
+    raise ValueError(
+        "No raw/final response column found. "
+        f"Expected one of {RESPONSE_COLUMNS}; "
+        f"found {list(df.columns)}"
+    )
+
+
+# ============================================================
+# Load model outputs
+# ============================================================
+
+def collect_predictions(
+    results_root: Path,
+    gold_by_batch,
+) -> pd.DataFrame:
+
+    if not results_root.exists():
+        raise FileNotFoundError(
+            "Results root does not exist: "
+            f"{results_root}"
+        )
+
+    records = []
+
+    model_dirs = sorted(
+        path
+        for path
+        in results_root.iterdir()
+        if (
+            path.is_dir()
+            and
+            path.name
+            != "evaluation"
+        )
+    )
+
+    if not model_dirs:
+        raise ValueError(
+            "No model/panel directories "
+            f"found under {results_root}"
+        )
+
+    for model_dir in model_dirs:
+
+        model_name = (
+            model_dir.name
+        )
+
+        csv_paths = sorted(
+            path
+            for path
+            in model_dir.rglob(
+                "*.csv"
+            )
+            if (
+                path.name
+                not in
+                GENERATED_OUTPUT_FILES
+            )
+        )
+
+        if not csv_paths:
+            continue
+
+        for csv_path in csv_paths:
+
+            df = pd.read_csv(
+                csv_path
+            )
+
+            # =================================================
+            # IMPORTANT:
+            # no legacy run inference.
+            # =================================================
+
+            if (
+                "run_id"
+                not in df.columns
+            ):
+                raise ValueError(
+                    f"{csv_path} has no "
+                    "run_id column.\n"
+                    "Legacy response_id / "
+                    "row-mod-10 outputs are "
+                    "NOT valid independent-run "
+                    "data."
+                )
+
+            if (
+                "question_id"
+                not in df.columns
+            ):
+                raise ValueError(
+                    f"{csv_path} has no "
+                    "question_id column.\n"
+                    "Row-order question inference "
+                    "is disabled."
+                )
+
+            response_col = (
+                select_response_column(
+                    df
+                )
+            )
+
+            # -------------------------------------------------
+            # Batch
+            # -------------------------------------------------
+
+            if (
+                "batch"
+                in df.columns
+            ):
+                batches = (
+                    df["batch"]
+                    .map(
+                        normalize_batch
+                    )
+                )
+
+                if batches.isna().any():
+                    raise ValueError(
+                        "Invalid batch value "
+                        f"in {csv_path}"
+                    )
+
+            else:
+                inferred_batch = (
+                    infer_batch_from_path(
+                        csv_path
+                    )
+                )
+
+                if inferred_batch is None:
+                    raise ValueError(
+                        "Cannot infer batch for "
+                        f"{csv_path}"
+                    )
+
+                batches = pd.Series(
+                    inferred_batch,
+                    index=df.index,
+                )
+
+            # -------------------------------------------------
+            # Prompt version
+            # -------------------------------------------------
+
+            if (
+                "version"
+                in df.columns
+            ):
+                versions = (
+                    df["version"]
+                    .map(
+                        normalize_version
+                    )
+                )
+
+                if versions.isna().any():
+                    raise ValueError(
+                        "Invalid version value "
+                        f"in {csv_path}"
+                    )
+
+            else:
+                inferred_version = (
+                    infer_version_from_path(
+                        csv_path
+                    )
+                )
+
+                if inferred_version is None:
+                    raise ValueError(
+                        "Cannot infer prompt "
+                        "version for "
+                        f"{csv_path}"
+                    )
+
+                versions = pd.Series(
+                    inferred_version,
+                    index=df.index,
+                )
+
+            # -------------------------------------------------
+            # Explicit run and question IDs
+            # -------------------------------------------------
+
+            run_ids = pd.to_numeric(
+                df["run_id"],
+                errors="coerce",
+            )
+
+            qids = pd.to_numeric(
+                df["question_id"],
+                errors="coerce",
+            )
+
+            if (
+                run_ids.isna().any()
+                or
+                (run_ids % 1 != 0).any()
+            ):
+                raise ValueError(
+                    "Non-integer run_id in "
+                    f"{csv_path}"
+                )
+
+            if (
+                qids.isna().any()
+                or
+                (qids % 1 != 0).any()
+            ):
+                raise ValueError(
+                    "Non-integer question_id "
+                    f"in {csv_path}"
+                )
+
+            run_ids = (
+                run_ids.astype(int)
+            )
+
+            qids = (
+                qids.astype(int)
+            )
+
+            # -------------------------------------------------
+            # Item records
+            # -------------------------------------------------
+
+            for idx in df.index:
+
+                batch = (
+                    batches.loc[idx]
+                )
+
+                version = (
+                    versions.loc[idx]
+                )
+
+                run_id = int(
+                    run_ids.loc[idx]
+                )
+
+                question_id = int(
+                    qids.loc[idx]
+                )
+
+                if run_id <= 0:
+                    raise ValueError(
+                        "run_id must be >= 1 "
+                        f"in {csv_path}"
+                    )
+
+                gold_map = (
+                    gold_by_batch.get(
+                        (batch, version),
+                        {},
+                    )
+                )
+
+                if (
+                    question_id
+                    not in gold_map
+                ):
+                    raise ValueError(
+                        "No gold label for "
+                        f"{batch} "
+                        f"question_id="
+                        f"{question_id} "
+                        f"in {csv_path}"
+                    )
+
+                raw_response = (
+                    df.at[
+                        idx,
+                        response_col,
+                    ]
+                )
+
+                (
+                    parsed_answer,
+                    parse_status,
+                ) = (
+                    parse_binary_response(
+                        raw_response
+                    )
+                )
+
+                gold_answer = (
+                    gold_map[
+                        question_id
+                    ]
+                )
+
+                correct = bool(
+                    parsed_answer
+                    is not None
+                    and
+                    parsed_answer
+                    == gold_answer
+                )
+
+                records.append({
+                    "model":
+                        model_name,
+
+                    "batch":
+                        batch,
+
+                    "version":
+                        version,
+
+                    "prompt_type":
+                        PROMPT_TYPES[
+                            version
+                        ],
+
+                    "run_id":
+                        run_id,
+
+                    "question_id":
+                        question_id,
+
+                    "raw_response":
+                        raw_response,
+
+                    "parsed_answer":
+                        parsed_answer,
+
+                    "parse_status":
+                        parse_status,
+
+                    "gold_answer":
+                        gold_answer,
+
+                    "gold_class":
+                        (
+                            "NCO"
+                            if
+                            gold_answer
+                            == "no"
+                            else
+                            "PCO"
+                        ),
+
+                    "predicted_class":
+                        (
+                            "NCO"
+                            if
+                            parsed_answer
+                            == "no"
+                            else
+                            "PCO"
+                            if
+                            parsed_answer
+                            == "yes"
+                            else
+                            "UNPARSEABLE"
+                        ),
+
+                    "correct":
+                        correct,
+
+                    "source_csv":
+                        str(
+                            csv_path
+                        ),
+
+                    "response_column":
+                        response_col,
+                })
+
+    if not records:
+        raise ValueError(
+            "No evaluable CSV outputs "
+            f"found under {results_root}"
+        )
+
+    items = pd.DataFrame(
+        records
+    )
+
+    # --------------------------------------------------------
+    # Never silently merge duplicate runs/files.
+    # --------------------------------------------------------
+
+    key_cols = [
+        "model",
+        "batch",
+        "version",
+        "run_id",
+        "question_id",
+    ]
+
+    duplicate_mask = (
+        items.duplicated(
+            key_cols,
+            keep=False,
+        )
+    )
+
+    if duplicate_mask.any():
+
+        sample = (
+            items.loc[
+                duplicate_mask,
+                key_cols
+                + ["source_csv"],
+            ]
+            .head(20)
+        )
+
+        raise ValueError(
+            "Duplicate "
+            "model/batch/version/run/question "
+            "records detected.\n"
+            "Do not mix old and new run files "
+            "in the same results directory.\n\n"
+            + sample.to_string(
+                index=False
+            )
+        )
+
+    return items
+
+
+# ============================================================
+# Coverage validation
+# ============================================================
+
+def validate_coverage(
+    items: pd.DataFrame,
+    gold_by_batch,
+    expected_runs: int,
+):
+
+    expected_run_ids = set(
+        range(
+            1,
+            expected_runs + 1,
+        )
+    )
+
+    errors = []
+
+    for model in sorted(
+        items["model"].unique()
+    ):
+
+        model_df = items[
+            items["model"]
+            == model
+        ]
+
+        versions_present = set(
+            model_df[
+                "version"
+            ].unique()
+        )
+
+        if (
+            versions_present
+            != set(VERSIONS)
+        ):
+            errors.append(
+                f"{model}: versions="
+                f"{sorted(versions_present)}, "
+                f"expected={VERSIONS}"
+            )
+
+        for version in VERSIONS:
+
+            expected_items = {
+                (
+                    batch,
+                    question_id,
+                )
+                for batch in BATCHES
+                for question_id
+                in gold_by_batch[
+                    (batch, version)
+                ]
+            }
+
+            sub = model_df[
+                model_df["version"]
+                == version
+            ]
+
+            if sub.empty:
+                continue
+
+            run_ids = {
+                int(value)
+                for value
+                in sub[
+                    "run_id"
+                ].unique()
+            }
+
+            if (
+                run_ids
+                != expected_run_ids
+            ):
+                errors.append(
+                    f"{model} {version}: "
+                    f"run_ids="
+                    f"{sorted(run_ids)}, "
+                    f"expected="
+                    f"{sorted(expected_run_ids)}"
+                )
+
+            for run_id in sorted(
+                run_ids
+            ):
+
+                run_df = sub[
+                    sub["run_id"]
+                    == run_id
+                ]
+
+                observed_items = set(
+                    zip(
+                        run_df["batch"],
+                        run_df[
+                            "question_id"
+                        ].astype(int),
+                    )
+                )
+
+                missing = (
+                    expected_items
+                    - observed_items
+                )
+
+                extra = (
+                    observed_items
+                    - expected_items
+                )
+
+                if (
+                    missing
+                    or extra
+                ):
+                    errors.append(
+                        f"{model} "
+                        f"{version} "
+                        f"run={run_id}: "
+                        f"observed="
+                        f"{len(observed_items)}, "
+                        f"expected="
+                        f"{len(expected_items)}, "
+                        f"missing="
+                        f"{len(missing)}, "
+                        f"extra="
+                        f"{len(extra)}"
+                    )
+
+    if errors:
+        raise ValueError(
+            "Incomplete paper-run "
+            "coverage:\n  - "
+            + "\n  - ".join(
+                errors[:50]
+            )
+        )
+
+
+# ============================================================
+# Metrics
+# ============================================================
+
+def safe_div(
+    numerator: int,
+    denominator: int,
+) -> float:
+
+    if denominator == 0:
+        return 0.0
+
+    return float(
+        numerator
+        / denominator
+    )
+
+
+def metric_row(
+    group: pd.DataFrame,
+) -> Dict:
+
+    pred = group[
+        "parsed_answer"
+    ]
+
+    gold = group[
+        "gold_answer"
+    ]
+
+    # ========================================================
+    # NCO / "no" IS POSITIVE
+    # ========================================================
+
+    tp = int(
+        (
+            (pred == "no")
+            &
+            (gold == "no")
+        ).sum()
+    )
+
+    fp = int(
+        (
+            (pred == "no")
+            &
+            (gold == "yes")
+        ).sum()
+    )
+
+    # If the gold item is an NCO and the model
+    # does not identify it as "no", it was not
+    # successfully retrieved as an NCO.
+    #
+    # This includes an unparseable response.
+    fn = int(
+        (
+            (gold == "no")
+            &
+            (pred != "no")
+        ).sum()
+    )
+
+    tn = int(
+        (
+            (pred == "yes")
+            &
+            (gold == "yes")
+        ).sum()
+    )
+
+    total = int(
+        len(group)
+    )
+
+    parseable = int(
+        pred.notna().sum()
+    )
+
+    unparseable = (
+        total
+        - parseable
+    )
+
+    unparseable_nco = int(
+        (
+            pred.isna()
+            &
+            (gold == "no")
+        ).sum()
+    )
+
+    unparseable_pco = int(
+        (
+            pred.isna()
+            &
+            (gold == "yes")
+        ).sum()
+    )
+
+    correct = int(
+        group[
+            "correct"
+        ].sum()
+    )
+
+    # Accuracy denominator ALWAYS includes
+    # unparseable outputs.
+    accuracy = safe_div(
+        correct,
+        total,
+    )
+
+    precision = safe_div(
+        tp,
+        tp + fp,
+    )
+
+    recall = safe_div(
+        tp,
+        tp + fn,
+    )
+
+    f1 = safe_div(
+        2
+        * precision
+        * recall,
+        precision
+        + recall,
+    )
+
+    return {
+        "n_total":
+            total,
+
+        "n_parseable":
+            parseable,
+
+        "n_unparseable":
+            unparseable,
+
+        "parse_rate":
+            safe_div(
+                parseable,
+                total,
+            ),
+
+        "nco_total":
+            int(
+                (
+                    gold == "no"
+                ).sum()
+            ),
+
+        "pco_total":
+            int(
+                (
+                    gold == "yes"
+                ).sum()
+            ),
+
+        "tp_nco":
+            tp,
+
+        "fp_nco":
+            fp,
+
+        "fn_nco":
+            fn,
+
+        "tn_pco":
+            tn,
+
+        "unparseable_nco":
+            unparseable_nco,
+
+        "unparseable_pco":
+            unparseable_pco,
+
+        "accuracy":
+            accuracy,
+
+        "precision":
+            precision,
+
+        "recall":
+            recall,
+
+        "f1":
+            f1,
+    }
+
+
+def compute_group_metrics(
+    items: pd.DataFrame,
+    group_cols,
+) -> pd.DataFrame:
+
+    rows = []
+
+    for (
+        keys,
+        group,
+    ) in items.groupby(
+        group_cols,
+        sort=False,
+    ):
+
+        if not isinstance(
+            keys,
+            tuple,
+        ):
+            keys = (
+                keys,
+            )
+
+        row = dict(
+            zip(
+                group_cols,
+                keys,
+            )
+        )
+
+        row.update(
+            metric_row(
+                group
+            )
+        )
+
+        rows.append(
+            row
+        )
+
+    return pd.DataFrame(
+        rows
+    )
+
+
+# ============================================================
+# Across-run summary
+# ============================================================
+
+def make_summary(
+    per_run: pd.DataFrame,
+) -> pd.DataFrame:
+
+    rows = []
+
+    metrics = [
+        "accuracy",
+        "precision",
+        "recall",
+        "f1",
+        "parse_rate",
+    ]
+
+    groups = per_run.groupby(
+        [
+            "model",
+            "version",
+            "prompt_type",
+        ],
+        sort=False,
+    )
+
+    for (
+        model,
+        version,
+        prompt_type,
+    ), group in groups:
+
+        row = {
+            "model":
+                model,
+
+            "version":
+                version,
+
+            "prompt_type":
+                prompt_type,
+
+            "n_runs":
+                int(
+                    group[
+                        "run_id"
+                    ].nunique()
+                ),
+        }
+
+        for metric in metrics:
+
+            row[
+                f"{metric}_mean"
+            ] = float(
+                group[
+                    metric
+                ].mean()
+            )
+
+            row[
+                f"{metric}_sd"
+            ] = (
+                float(
+                    group[
+                        metric
+                    ].std(
+                        ddof=1
+                    )
+                )
+                if len(group) > 1
+                else 0.0
+            )
+
+        row[
+            "unparseable_total"
+        ] = int(
+            group[
+                "n_unparseable"
+            ].sum()
+        )
+
+        rows.append(
+            row
+        )
+
+    summary = pd.DataFrame(
+        rows
+    )
+
+    version_order = {
+        version: index
+        for index, version
+        in enumerate(
+            VERSIONS,
+            start=1,
+        )
+    }
+
+    summary[
+        "_version_order"
+    ] = (
+        summary[
+            "version"
+        ].map(
+            version_order
+        )
+    )
+
+    summary = (
+        summary
+        .sort_values(
+            [
+                "model",
+                "_version_order",
+            ]
+        )
+        .drop(
+            columns=[
+                "_version_order"
+            ]
+        )
+    )
+
+    return summary
+
+
+# ============================================================
+# Main
+# ============================================================
+
+def main():
+
+    args = parse_args()
+
+    if args.expected_runs <= 0:
+        raise ValueError(
+            "--expected-runs "
+            "must be positive."
+        )
+
+    results_root = (
+        args.results_root
+        .resolve()
+    )
+
+    gold_root = (
+        args.gold_root
+        .resolve()
+    )
+
+    out_dir = (
+        args.out_dir
+        or
+        (
+            results_root
+            / "evaluation"
+        )
+    ).resolve()
+
+    out_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    # --------------------------------------------------------
+    # Gold benchmark
+    # --------------------------------------------------------
+
+    gold_by_batch = (
+        load_gold(
+            gold_root
+        )
+    )
+
+    batch_counts = {
+        batch: len(
+            gold_by_batch[
+                (batch, "v1")
+            ]
+        )
+        for batch in BATCHES
+    }
+
+    total_gold = sum(
+        batch_counts.values()
+    )
+
+    print(
+        "Gold outcome counts:"
+    )
+
+    for batch in BATCHES:
+        print(
+            f"  {batch}: "
+            f"{batch_counts[batch]}"
+        )
+
+    print(
+        f"  TOTAL: {total_gold}"
+    )
+
+    print(
+        "Positive class: "
+        "NCO = 'no'"
+    )
+
+    print()
+
+    # --------------------------------------------------------
+    # Raw predictions
+    # --------------------------------------------------------
+
+    items = (
+        collect_predictions(
+            results_root,
+            gold_by_batch,
+        )
+    )
+
+    # --------------------------------------------------------
+    # Strict paper coverage
+    # --------------------------------------------------------
+
+    if not args.allow_incomplete:
+
+        validate_coverage(
+            items,
+            gold_by_batch,
+            args.expected_runs,
+        )
+
+    # --------------------------------------------------------
+    # Item-level audit trail
+    # --------------------------------------------------------
+
+    item_path = (
+        out_dir
+        / "item_predictions.csv"
+    )
+
+    (
+        items
+        .sort_values(
+            [
+                "model",
+                "version",
+                "run_id",
+                "batch",
+                "question_id",
+            ]
+        )
+        .to_csv(
+            item_path,
+            index=False,
+        )
+    )
+
+    # --------------------------------------------------------
+    # Explicit parse failures
+    # --------------------------------------------------------
+
+    failures = (
+        items[
+            items[
+                "parsed_answer"
+            ].isna()
+        ]
+        .copy()
+    )
+
+    failure_path = (
+        out_dir
+        / "parse_failures.csv"
+    )
+
+    failures.to_csv(
+        failure_path,
+        index=False,
+    )
+
+    # --------------------------------------------------------
+    # Batch-specific diagnostics
+    # --------------------------------------------------------
+
+    per_batch = (
+        compute_group_metrics(
+            items,
+            [
+                "model",
+                "version",
+                "prompt_type",
+                "run_id",
+                "batch",
+            ],
+        )
+        .sort_values(
+            [
+                "model",
+                "version",
+                "run_id",
+                "batch",
+            ]
+        )
+    )
+
+    per_batch_path = (
+        out_dir
+        / "per_batch_run_metrics.csv"
+    )
+
+    per_batch.to_csv(
+        per_batch_path,
+        index=False,
+    )
+
+    # --------------------------------------------------------
+    # PAPER-LEVEL PER-RUN METRICS
+    #
+    # Each metric is calculated over the full
+    # benchmark for one independent run.
+    # --------------------------------------------------------
+
+    per_run = (
+        compute_group_metrics(
+            items,
+            [
+                "model",
+                "version",
+                "prompt_type",
+                "run_id",
+            ],
+        )
+        .sort_values(
+            [
+                "model",
+                "version",
+                "run_id",
+            ]
+        )
+    )
+
+    per_run_path = (
+        out_dir
+        / "per_run_metrics.csv"
+    )
+
+    per_run.to_csv(
+        per_run_path,
+        index=False,
+    )
+
+    # --------------------------------------------------------
+    # Mean + sample SD across independent runs
+    # --------------------------------------------------------
+
+    summary = (
+        make_summary(
+            per_run
+        )
+    )
+
+    summary_path = (
+        out_dir
+        / "summary_metrics.csv"
+    )
+
+    summary.to_csv(
+        summary_path,
+        index=False,
+    )
+
+    # --------------------------------------------------------
+    # Report
+    # --------------------------------------------------------
+
+    print(
+        f"Saved: {item_path}"
+    )
+
+    print(
+        f"Saved: {failure_path}"
+    )
+
+    print(
+        f"Saved: {per_batch_path}"
+    )
+
+    print(
+        f"Saved: {per_run_path}"
+    )
+
+    print(
+        f"Saved: {summary_path}"
+    )
+
+    print()
+
+    print(
+        "Parsed items: "
+        f"{int(items['parsed_answer'].notna().sum())}"
+        f"/{len(items)}"
+    )
+
+    print(
+        "Unparseable:  "
+        f"{int(items['parsed_answer'].isna().sum())}"
+    )
+
+    if args.allow_incomplete:
+        print(
+            "WARNING: --allow-incomplete "
+            "was used; these outputs are "
+            "NOT paper-table results."
+        )
+    else:
+        print(
+            "Coverage validation: PASS"
+        )
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,32 @@
+{
+  "panel_name": "Claude-Panel",
+  "architecture": "rolling_review",
+  "num_runs": 10,
+  "agents": [
+    {
+      "agent_id": "claude_1",
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6"
+    },
+    {
+      "agent_id": "claude_2",
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6"
+    },
+    {
+      "agent_id": "claude_3",
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6"
+    },
+    {
+      "agent_id": "claude_4",
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6"
+    },
+    {
+      "agent_id": "claude_5",
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6"
+    }
+  ]
+}

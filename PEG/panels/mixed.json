@@ -1,0 +1,37 @@
+{
+  "panel_name": "Mixed-Panel",
+  "architecture": "rolling_review",
+  "num_runs": 10,
+  "agents": [
+    {
+      "agent_id": "llama",
+      "provider": "hf",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "device": 0
+    },
+    {
+      "agent_id": "qwen",
+      "provider": "hf_multimodal",
+      "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "device": 1
+    },
+    {
+      "agent_id": "gemma",
+      "provider": "hf_multimodal",
+      "model_id": "google/gemma-3-4b-it",
+      "device": 2
+    },
+    {
+      "agent_id": "falcon3",
+      "provider": "hf",
+      "model_id": "tiiuae/Falcon3-7B-Instruct",
+      "device": 3
+    },
+    {
+      "agent_id": "deepseek",
+      "provider": "hf",
+      "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+      "device": 4
+    }
+  ]
+}

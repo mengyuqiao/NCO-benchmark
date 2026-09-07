@@ -1,0 +1,32 @@
+{
+  "panel_name": "Gemini-Panel",
+  "architecture": "rolling_review",
+  "num_runs": 10,
+  "agents": [
+    {
+      "agent_id": "gemini_1",
+      "provider": "gemini",
+      "model_id": "gemini-3.1-pro-preview"
+    },
+    {
+      "agent_id": "gemini_2",
+      "provider": "gemini",
+      "model_id": "gemini-3.1-pro-preview"
+    },
+    {
+      "agent_id": "gemini_3",
+      "provider": "gemini",
+      "model_id": "gemini-3.1-pro-preview"
+    },
+    {
+      "agent_id": "gemini_4",
+      "provider": "gemini",
+      "model_id": "gemini-3.1-pro-preview"
+    },
+    {
+      "agent_id": "gemini_5",
+      "provider": "gemini",
+      "model_id": "gemini-3.1-pro-preview"
+    }
+  ]
+}

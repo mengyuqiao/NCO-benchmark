@@ -1,35 +1,44 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from transformers import pipeline, AutoTokenizer, set_seed
+from transformers import pipeline, AutoTokenizer
 from pathlib import Path
 from datetime import datetime
 import csv, re, time, os, sys
 
 # ========= 可调参数（支持环境变量覆盖） =========
 MODEL = os.getenv("MODEL", "google/gemma-3-4b-it")
+NUM_RUNS = int(os.getenv("NUM_RUNS", "10"))
 
 # 目录结构：questions/Batch1..Batch5/medical_questions_v1..v5.txt
-QUESTIONS_ROOT = Path(os.getenv("QUESTIONS_ROOT", "questions"))
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent.parent
+
+QUESTIONS_ROOT = Path(
+    os.getenv(
+        "QUESTIONS_ROOT",
+        str(REPO_ROOT / "Batch" / "questions")
+    )
+)
 
 # 输出结构：results/<MODEL_TAG>/Batch1..Batch5/
 MODEL_TAG = os.getenv("MODEL_TAG", "gemma3")
-OUTROOT = Path(os.getenv("OUTROOT", "results"))
+OUTROOT = Path(
+    os.getenv(
+        "OUTROOT",
+        str(REPO_ROOT / "results")
+    )
+)
 
 # 生成配置（短输出+不回显）
 GEN_CFG = {
-    "max_new_tokens": int(os.getenv("MAX_NEW_TOKENS", "3")),
-    "num_return_sequences": int(os.getenv("NUM_RETURN_SEQUENCES", "10")),
+    "max_new_tokens": int(os.getenv("MAX_NEW_TOKENS", "2048")),
+    "num_return_sequences": 1,
     "do_sample": True,
-    "temperature": float(os.getenv("TEMPERATURE", "0.3")),
+    "temperature": float(os.getenv("TEMPERATURE", "1.0")),
     "top_p": float(os.getenv("TOP_P", "1.0")),
     "return_full_text": False,
 }
-
-# 随机种子（可复现）
-SEED = int(os.getenv("SEED", "42"))
-set_seed(SEED)
-os.environ["PYTHONHASHSEED"] = str(SEED)
 
 # ========= CUDA 控制 =========
 DEVICE_ID = int(os.getenv("DEVICE_ID", "1"))
@@ -38,7 +47,6 @@ cuda_visible = os.getenv("CUDA_VISIBLE_DEVICES", "").strip()
 print(f"[BOOT] Model={MODEL}")
 print(f"[BOOT] MODEL_TAG={MODEL_TAG}")
 print(f"[BOOT] GEN_CFG={GEN_CFG}")
-print(f"[BOOT] SEED={SEED}")
 
 # ====== 初始化 tokenizer 与 pipeline ======
 tok = AutoTokenizer.from_pretrained(MODEL)
@@ -83,23 +91,22 @@ def iter_questions_from_file(path: Path):
         yield qid, block
 
 def to_chat_text(user_prompt: str) -> str:
-    """
-    用 chat 模板强约束输出只给 yes/no：
-    - system 明确：只输出一个 token
-    - user 文本后追加 'Answer:' 引导只补一个词
-    """
     messages = [
-        {"role": "system", "content": "Reply with only one token: yes or no."},
-        {"role": "user", "content": user_prompt.strip() + "\nAnswer:"},
+        {"role": "user", "content": user_prompt.strip()},
     ]
-    return tok.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
 
-def take_yes_no(s: str) -> str:
-    """兜底：从生成文本中提取第一个 yes/no；都没有就返回 'no'。"""
+    return tok.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=True
+    )
+
+def take_yes_no(s: str):
     if not isinstance(s, str):
-        return "no"
+        return None
+
     m = re.search(r"\b(yes|no)\b", s.lower())
-    return m.group(1) if m else "no"
+    return m.group(1) if m else None
 
 def list_batches(root: Path):
     """找 Batch1..Batch5（也兼容更多 Batch）"""
@@ -147,47 +154,79 @@ def main():
             print(f"  -> {file.name}: {len(questions)} questions")
 
             ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-            out_csv = out_dir / f"{file.stem}_multi{GEN_CFG['num_return_sequences']}_{ts}.csv"
+            out_csv = out_dir / f"{file.stem}_{NUM_RUNS}runs_{ts}.csv"
 
             with out_csv.open("w", newline="", encoding="utf-8") as fcsv:
                 writer = csv.writer(fcsv)
                 writer.writerow([
-                    "model_tag","batch","version",
-                    "file","question_id","prompt",
-                    "response_id","response","extracted_answer"
+                    "model_tag",
+                    "batch",
+                    "version",
+                    "file",
+                    "run_id",
+                    "question_id",
+                    "prompt",
+                    "response",
+                    "extracted_answer"
                 ])
 
-                for idx, (qid, qtext) in enumerate(questions, start=1):
-                    prompt_chat = to_chat_text(qtext)
+                for run_id in range(1, NUM_RUNS + 1):
+                    print(f"    ▶ Independent run {run_id}/{NUM_RUNS}")
 
-                    try:
-                        outputs = pipe(prompt_chat, **GEN_CFG)
-                        if isinstance(outputs, dict):
-                            outputs = [outputs]
+                    for idx, (qid, qtext) in enumerate(questions, start=1):
+                        prompt_chat = to_chat_text(qtext)
 
-                        got = 0
-                        for j, out in enumerate(outputs, start=1):
-                            gen = out.get("generated_text", "")
+                        try:
+                            outputs = pipe(prompt_chat, **GEN_CFG)
+
+                            if isinstance(outputs, dict):
+                                outputs = [outputs]
+
+                            if len(outputs) != 1:
+                                raise RuntimeError(
+                                    f"Expected exactly one response, got {len(outputs)}"
+                                )
+
+                            gen = outputs[0].get("generated_text", "")
                             yn = take_yes_no(gen)
+
                             writer.writerow([
-                                MODEL_TAG, batch_name, f"v{v}",
-                                file.name, qid, qtext.strip(),
-                                j, gen, yn
+                                MODEL_TAG,
+                                batch_name,
+                                f"v{v}",
+                                file.name,
+                                run_id,
+                                qid,
+                                qtext.strip(),
+                                gen,
+                                yn
                             ])
-                            got += 1
 
-                        print(f"    ✅ {batch_name} {file.name} Q{idx} (Question {qid}): got {got} responses")
+                            print(
+                                f"      ✅ run={run_id} "
+                                f"{batch_name} {file.name} Q{idx}"
+                            )
 
-                    except Exception as e:
-                        writer.writerow([
-                            MODEL_TAG, batch_name, f"v{v}",
-                            file.name, qid, qtext.strip(),
-                            "-", f"[ERROR] {e}", ""
-                        ])
-                        print(f"    ⚠️  {batch_name} {file.name} Q{idx} (Question {qid}) failed: {e}")
+                        except Exception as e:
+                            writer.writerow([
+                                MODEL_TAG,
+                                batch_name,
+                                f"v{v}",
+                                file.name,
+                                run_id,
+                                qid,
+                                qtext.strip(),
+                                f"[ERROR] {e}",
+                                ""
+                            ])
 
-                    fcsv.flush()
-                    time.sleep(0.05)
+                            print(
+                                f"      ⚠️ run={run_id} "
+                                f"{batch_name} {file.name} Q{idx} failed: {e}"
+                            )
+
+                        fcsv.flush()
+                        time.sleep(0.05)
 
             print(f"    🎯 Saved: {out_csv.relative_to(OUTROOT)}")
 

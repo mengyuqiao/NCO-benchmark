@@ -1,0 +1,32 @@
+benchmark:
+  prompt_types:
+    - plain
+    - system
+    - 2-shot
+    - 5-shot
+    - 10-shot
+
+inference:
+  temperature: 1.0
+  top_p: 1.0
+  max_new_tokens: 2048
+  num_runs: 10
+  do_sample: true
+
+models:
+  - Claude
+  - Gemini3
+  - GPT5
+  - Grok
+  - DeepSeek
+  - Qwen
+  - Llama
+  - Falcon3
+  - Gemma
+
+rolling_review:
+  panel_size: 5
+
+arbitration:
+  panel_size: 5
+  judge: Claude

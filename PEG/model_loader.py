@@ -1,216 +1,964 @@
+import copy
+import os
+from typing import Dict, List, Optional
+
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import (
+    AutoModelForCausalLM,
+    AutoModelForMultimodalLM,
+    AutoProcessor,
+    AutoTokenizer,
+)
 
 
-def fallback_pipeline(model, tokenizer, eos_token_id=None):
-    """
-    纯 forward() + greedy 的应急生成器：
-    - 逐 token 生成，直到 max_new_tokens 或遇到 eos
-    - 只返回“新生成的续写文本”（不包含 prompt）
-    """
-    def generator(prompt, max_new_tokens=1000, **kwargs):
-        device = next(model.parameters()).device
-        encoded = tokenizer(prompt, return_tensors="pt").to(device)
-        input_ids = encoded["input_ids"]
-        attn = encoded.get("attention_mask", None)
-
-        generated = []
-        cur_ids = input_ids
-        with torch.no_grad():
-            for _ in range(max_new_tokens):
-                out = model(input_ids=cur_ids, attention_mask=attn) if attn is not None else model(input_ids=cur_ids)
-                logits = out.logits[:, -1, :]
-                next_token = torch.argmax(logits, dim=-1, keepdim=True)  # greedy
-                if eos_token_id is not None and next_token.item() == eos_token_id:
-                    break
-                generated.append(next_token)
-                cur_ids = torch.cat([cur_ids, next_token], dim=1)
-                if attn is not None:
-                    attn = torch.cat([attn, torch.ones_like(next_token)], dim=1)
-
-        if len(generated) == 0:
-            continuation = ""
-        else:
-            new_ids = torch.cat(generated, dim=1)[0]
-            continuation = tokenizer.decode(new_ids, skip_special_tokens=True)
-        return [{"generated_text": continuation.strip()}]
-    return generator
-
+# ============================================================
+# Shared helpers
+# ============================================================
 
 def _device_map_for_single_gpu(device: int):
-    # ✅ 关键：用 device_map 直接把权重 load 到指定 GPU，避免 CPU->GPU 再 .to() 的峰值
-    return {"": f"cuda:{device}"}
+    return {
+        "": f"cuda:{device}"
+    }
 
 
-class StandardAgent:
+def _prepare_hf_input(
+    tokenizer,
+    prompt: str,
+) -> str:
     """
-    通用 CausalLM Agent：
-    - 使用 generate()；只返回续写片段（不含 prompt）
-    - __call__ 接受任意生成参数（未知参数将被忽略），避免 TypeError
-    - 失败时回落到 forward() + greedy 循环生成（同样只返回续写）
+    Preserve prompt semantics exactly.
+
+    Chat templates are allowed only as model-interface formatting.
+    No additional system or task instruction is inserted.
     """
-    def __init__(self, model_name: str, device: int):
-        self.device = device
+    prompt = prompt.strip()
+
+    chat_template = getattr(
+        tokenizer,
+        "chat_template",
+        None,
+    )
+
+    if chat_template:
+        messages = [
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ]
+
+        return tokenizer.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+
+    return prompt
+
+
+# ============================================================
+# Hugging Face
+# ============================================================
+
+class HFAgent:
+    """
+    Local Hugging Face causal-language-model agent.
+    """
+
+    provider = "huggingface"
+
+    def __init__(
+        self,
+        model_name: str,
+        device: int,
+        agent_id: Optional[str] = None,
+    ):
         self.model_name = model_name
+        self.agent_id = (
+            agent_id or model_name
+        )
+        self.device_id = int(device)
 
-        # tokenizer
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-        if self.tokenizer.pad_token_id is None and self.tokenizer.eos_token_id is not None:
-            self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
+        print(
+            f"[INIT] HF "
+            f"agent={self.agent_id} "
+            f"model={self.model_name} "
+            f"device=cuda:{self.device_id}",
+            flush=True,
+        )
 
-        try:
-            # ✅ 关键：不要 .to(cuda)；用 device_map 直接 load 到对应 GPU
-            self.model = AutoModelForCausalLM.from_pretrained(
+        self.tokenizer = (
+            AutoTokenizer.from_pretrained(
                 model_name,
                 trust_remote_code=True,
-                device_map=_device_map_for_single_gpu(device),
+            )
+        )
+
+        if (
+            self.tokenizer.pad_token_id is None
+            and
+            self.tokenizer.eos_token_id is not None
+        ):
+            self.tokenizer.pad_token_id = (
+                self.tokenizer.eos_token_id
+            )
+
+        self.model = (
+            AutoModelForCausalLM
+            .from_pretrained(
+                model_name,
+                trust_remote_code=True,
+                device_map=(
+                    _device_map_for_single_gpu(
+                        self.device_id
+                    )
+                ),
                 torch_dtype="auto",
                 low_cpu_mem_usage=True,
             )
-            self.model.eval()
+        )
 
-            def _gen(prompt, max_new_tokens=1000, **kwargs):
-                do_sample = kwargs.get("do_sample", False)
-                temperature = kwargs.get("temperature", 1.0)
-                top_p = kwargs.get("top_p", 1.0)
+        self.model.eval()
 
-                eos_id = self.tokenizer.eos_token_id
-                pad_id = self.tokenizer.pad_token_id
-
-                enc = self.tokenizer(prompt, return_tensors="pt")
-                # inputs 放到模型所在 device
-                model_device = next(self.model.parameters()).device
-                enc = {k: v.to(model_device) for k, v in enc.items()}
-
-                input_len = enc["input_ids"].shape[1]
-                gen_ids = self.model.generate(
-                    **enc,
-                    max_new_tokens=max_new_tokens,
-                    do_sample=do_sample,
-                    temperature=temperature,
-                    top_p=top_p,
-                    eos_token_id=eos_id,
-                    pad_token_id=pad_id,
-                )
-                new_tokens = gen_ids[0, input_len:]
-                text = self.tokenizer.decode(new_tokens, skip_special_tokens=True)
-                return [{"generated_text": text.strip()}]
-
-            self.generator = _gen
-
-        except Exception as e:
-            print(f"[Fallback] {model_name} will use forward() decoding: {e}", flush=True)
-            # ✅ 仍然用 CausalLM（保证 logits 存在）
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_name,
-                trust_remote_code=True,
-                device_map=_device_map_for_single_gpu(device),
-                torch_dtype="auto",
-                low_cpu_mem_usage=True,
-            )
-            self.model.eval()
-            self.generator = fallback_pipeline(
-                self.model, self.tokenizer, eos_token_id=self.tokenizer.eos_token_id
+    @torch.inference_mode()
+    def __call__(
+        self,
+        prompt: str,
+        max_new_tokens: int = 2048,
+        do_sample: bool = True,
+        temperature: float = 1.0,
+        top_p: float = 1.0,
+        **kwargs,
+    ):
+        if kwargs:
+            raise ValueError(
+                "Unexpected Hugging Face generation "
+                f"arguments: {sorted(kwargs)}"
             )
 
-    def __call__(self, prompt: str, max_new_tokens: int = 1000, **gen_kwargs):
-        try:
-            return self.generator(prompt, max_new_tokens=max_new_tokens, **gen_kwargs)
-        except TypeError:
-            return self.generator(prompt, max_new_tokens=max_new_tokens)
+        formatted_prompt = (
+            _prepare_hf_input(
+                self.tokenizer,
+                prompt,
+            )
+        )
+
+        encoded = self.tokenizer(
+            formatted_prompt,
+            return_tensors="pt",
+        )
+
+        model_device = next(
+            self.model.parameters()
+        ).device
+
+        encoded = {
+            key: value.to(model_device)
+            for key, value
+            in encoded.items()
+        }
+
+        input_length = (
+            encoded["input_ids"]
+            .shape[1]
+        )
+
+        generated_ids = (
+            self.model.generate(
+                **encoded,
+                max_new_tokens=max_new_tokens,
+                do_sample=do_sample,
+                temperature=temperature,
+                top_p=top_p,
+                eos_token_id=(
+                    self.tokenizer
+                    .eos_token_id
+                ),
+                pad_token_id=(
+                    self.tokenizer
+                    .pad_token_id
+                ),
+            )
+        )
+
+        if generated_ids.shape[0] != 1:
+            raise RuntimeError(
+                "Expected exactly one generated "
+                "sequence; received "
+                f"{generated_ids.shape[0]}."
+            )
+
+        new_tokens = generated_ids[
+            0,
+            input_length:
+        ]
+
+        response = (
+            self.tokenizer.decode(
+                new_tokens,
+                skip_special_tokens=True,
+            )
+            .strip()
+        )
+
+        if not response:
+            raise RuntimeError(
+                f"{self.agent_id} returned "
+                "an empty response."
+            )
+
+        return [
+            {
+                "generated_text": response,
+                "prompt_tokens": int(input_length),
+                "completion_tokens": int(new_tokens.numel()),
+                "total_tokens": int(
+                    input_length + new_tokens.numel()
+                ),
+            }
+        ]
 
 
-class QwenAgent:
+class HFMultimodalAgent:
     """
-    Qwen 专用：
-    - 用 chat_template 包装成聊天格式
-    - 不用 pipeline（避免内部 model.to(device) 导致显存峰值/OOM）
-    - 只返回续写（不含 prompt）
+    Hugging Face multimodal model used in text-only mode.
+
+    Used for checkpoints such as:
+        Qwen/Qwen3-VL-8B-Instruct
+        google/gemma-3-4b-it
+
+    The benchmark itself is text-only. The multimodal processor is
+    required because these checkpoints are multimodal architectures.
+
+    No image content and no additional semantic instruction are added.
     """
-    def __init__(self, model_path: str, device: int):
-        self.device = device
-        self.model_path = model_path
 
-        self.tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-        if self.tokenizer.pad_token_id is None and self.tokenizer.eos_token_id is not None:
-            self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
+    provider = "hf_multimodal"
 
-        # ✅ 关键：直接 device_map 到指定 GPU
-        self.model = AutoModelForCausalLM.from_pretrained(
-            model_path,
+    def __init__(
+        self,
+        model_name: str,
+        device: int,
+        agent_id: Optional[str] = None,
+    ):
+        self.model_name = model_name
+        self.agent_id = agent_id or model_name
+        self.device_id = int(device)
+
+        print(
+            f"[INIT] HF multimodal "
+            f"agent={self.agent_id} "
+            f"model={self.model_name} "
+            f"device=cuda:{self.device_id}",
+            flush=True,
+        )
+
+        self.processor = AutoProcessor.from_pretrained(
+            model_name,
             trust_remote_code=True,
-            device_map=_device_map_for_single_gpu(device),
+        )
+
+        self.model = AutoModelForMultimodalLM.from_pretrained(
+            model_name,
+            trust_remote_code=True,
+            device_map=_device_map_for_single_gpu(
+                self.device_id
+            ),
             torch_dtype="auto",
             low_cpu_mem_usage=True,
         )
+
         self.model.eval()
 
-    def format_chat(self, prompt: str) -> str:
-        messages = [{"role": "user", "content": prompt.strip()}]
-        return self.tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
+    @torch.inference_mode()
+    def __call__(
+        self,
+        prompt: str,
+        max_new_tokens: int = 2048,
+        do_sample: bool = True,
+        temperature: float = 1.0,
+        top_p: float = 1.0,
+        **kwargs,
+    ):
+        if kwargs:
+            raise ValueError(
+                "Unexpected HF multimodal generation arguments: "
+                f"{sorted(kwargs)}"
+            )
+
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": prompt.strip(),
+                    }
+                ],
+            }
+        ]
+
+        inputs = self.processor.apply_chat_template(
+            messages,
+            add_generation_prompt=True,
+            tokenize=True,
+            return_dict=True,
+            return_tensors="pt",
         )
 
-    @torch.inference_mode()
-    def __call__(self, prompt: str, max_new_tokens: int = 1000, **gen_kwargs):
-        chat_prompt = self.format_chat(prompt)
+        model_device = next(
+            self.model.parameters()
+        ).device
 
-        do_sample = gen_kwargs.get("do_sample", False)
-        temperature = gen_kwargs.get("temperature", 1.0)
-        top_p = gen_kwargs.get("top_p", 1.0)
+        inputs = {
+            key: value.to(model_device)
+            if hasattr(value, "to")
+            else value
+            for key, value in inputs.items()
+        }
 
-        eos_id = self.tokenizer.eos_token_id
-        pad_id = self.tokenizer.pad_token_id
+        input_length = (
+            inputs["input_ids"].shape[-1]
+        )
 
-        enc = self.tokenizer(chat_prompt, return_tensors="pt")
-        model_device = next(self.model.parameters()).device
-        enc = {k: v.to(model_device) for k, v in enc.items()}
-
-        input_len = enc["input_ids"].shape[1]
-        gen_ids = self.model.generate(
-            **enc,
+        generated_ids = self.model.generate(
+            **inputs,
             max_new_tokens=max_new_tokens,
             do_sample=do_sample,
             temperature=temperature,
             top_p=top_p,
-            eos_token_id=eos_id,
-            pad_token_id=pad_id,
         )
-        new_tokens = gen_ids[0, input_len:]
-        text = self.tokenizer.decode(new_tokens, skip_special_tokens=True)
-        return [{"generated_text": text.strip()}]
 
+        if generated_ids.shape[0] != 1:
+            raise RuntimeError(
+                "Expected exactly one generated sequence; "
+                f"received {generated_ids.shape[0]}."
+            )
 
-def load_model_pipelines(model_names: list, device_map: dict, agent_ids: list = None):
+        new_tokens = generated_ids[
+            0,
+            input_length:
+        ]
+
+        response = self.processor.decode(
+            new_tokens,
+            skip_special_tokens=True,
+        ).strip()
+
+        if not response:
+            raise RuntimeError(
+                f"{self.agent_id} returned an empty response."
+            )
+
+        return [
+            {
+                "generated_text": response,
+                "prompt_tokens": int(input_length),
+                "completion_tokens": int(new_tokens.numel()),
+                "total_tokens": int(
+                    input_length + new_tokens.numel()
+                ),
+            }
+        ]
+
+# ============================================================
+# Anthropic Claude
+# ============================================================
+
+class AnthropicAgent:
     """
-    返回 {agent_id: Agent} 字典
+    Anthropic Messages API agent.
 
-    参数：
-    - model_names: 用于真实加载的 HF repo 列表（可重复）
-    - agent_ids:  外部唯一标识（用于 agents dict key / peg_core key / CSV 列名）
-                 若为 None，则默认等同于 model_names（兼容你旧用法）
-    - device_map: key 必须是 agent_id（唯一），value 是 GPU 编号
+    API key:
+        ANTHROPIC_API_KEY
+
+    The exact Claude model ID is supplied by experiment
+    configuration rather than hard-coded here.
     """
-    if agent_ids is None:
-        agent_ids = model_names
 
-    assert len(model_names) == len(agent_ids), "model_names 与 agent_ids 数量需一致"
+    provider = "anthropic"
+
+    def __init__(
+        self,
+        model_name: str,
+        agent_id: Optional[str] = None,
+    ):
+        try:
+            from anthropic import Anthropic
+        except ImportError as exc:
+            raise ImportError(
+                "Anthropic provider requires the "
+                "'anthropic' package. Install with:\n"
+                "    pip install anthropic"
+            ) from exc
+
+        api_key = os.getenv(
+            "ANTHROPIC_API_KEY"
+        )
+
+        if not api_key:
+            raise RuntimeError(
+                "ANTHROPIC_API_KEY is not set."
+            )
+
+        self.model_name = model_name
+        self.agent_id = (
+            agent_id or model_name
+        )
+
+        self.client = Anthropic(
+            api_key=api_key,
+        )
+        
+        self.last_usage = None
+        self.last_response_metadata = None
+
+        print(
+            f"[INIT] Anthropic "
+            f"agent={self.agent_id} "
+            f"model={self.model_name}",
+            flush=True,
+        )
+
+    def __call__(
+        self,
+        prompt: str,
+        max_new_tokens: int = 2048,
+        do_sample: bool = True,
+        temperature: float = 1.0,
+        top_p: float = 1.0,
+        **kwargs,
+    ):
+        if kwargs:
+            raise ValueError(
+                "Unexpected Anthropic generation "
+                f"arguments: {sorted(kwargs)}"
+            )
+
+        if not do_sample:
+            raise ValueError(
+                "Paper protocol requires stochastic "
+                "sampling; do_sample=False is not "
+                "supported for this experiment."
+            )
+
+        # Deliberately pass the paper-reported settings.
+        #
+        # If the selected Claude model/API version cannot
+        # honor them, allow the API to fail loudly rather
+        # than silently changing the protocol.
+        message = (
+            self.client.messages.create(
+                model=self.model_name,
+                max_tokens=max_new_tokens,
+                temperature=temperature,
+                top_p=top_p,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt.strip(),
+                    }
+                ],
+            )
+        )
+
+        usage = getattr(
+            message,
+            "usage",
+            None,
+        )
+
+        self.last_usage = {
+            "input_tokens": getattr(
+                usage,
+                "input_tokens",
+                None,
+            ),
+            "output_tokens": getattr(
+                usage,
+                "output_tokens",
+                None,
+            ),
+            "cache_creation_input_tokens": getattr(
+                usage,
+                "cache_creation_input_tokens",
+                None,
+            ),
+            "cache_read_input_tokens": getattr(
+                usage,
+                "cache_read_input_tokens",
+                None,
+            ),
+        }
+
+        self.last_response_metadata = {
+            "model": getattr(
+                message,
+                "model",
+                self.model_name,
+            ),
+            "stop_reason": getattr(
+                message,
+                "stop_reason",
+                None,
+            ),
+        }
+
+        text_blocks = []
+
+        for block in message.content:
+            if getattr(
+                block,
+                "type",
+                None,
+            ) == "text":
+                text_blocks.append(
+                    block.text
+                )
+
+        response = (
+            "\n".join(text_blocks)
+            .strip()
+        )
+
+        if not response:
+            raise RuntimeError(
+                f"{self.agent_id} returned "
+                "an empty response."
+            )
+
+        return [
+            {
+                "generated_text": response
+            }
+        ]
+
+
+# ============================================================
+# Google Gemini
+# ============================================================
+
+class GeminiAgent:
+    """
+    Google Gemini API agent.
+
+    API key:
+        GEMINI_API_KEY
+
+    The exact Gemini model ID is supplied by experiment
+    configuration rather than hard-coded here.
+    """
+
+    provider = "gemini"
+
+    def __init__(
+        self,
+        model_name: str,
+        agent_id: Optional[str] = None,
+    ):
+        try:
+            from google import genai
+            from google.genai import types
+        except ImportError as exc:
+            raise ImportError(
+                "Gemini provider requires the "
+                "'google-genai' package. Install with:\n"
+                "    pip install google-genai"
+            ) from exc
+
+        api_key = os.getenv(
+            "GEMINI_API_KEY"
+        )
+
+        if not api_key:
+            raise RuntimeError(
+                "GEMINI_API_KEY is not set."
+            )
+
+        self.model_name = model_name
+        self.agent_id = (
+            agent_id or model_name
+        )
+
+        self._types = types
+
+        self.client = genai.Client(
+            api_key=api_key,
+        )
+
+        print(
+            f"[INIT] Gemini "
+            f"agent={self.agent_id} "
+            f"model={self.model_name}",
+            flush=True,
+        )
+
+    def __call__(
+        self,
+        prompt: str,
+        max_new_tokens: int = 2048,
+        do_sample: bool = True,
+        temperature: float = 1.0,
+        top_p: float = 1.0,
+        **kwargs,
+    ):
+        if kwargs:
+            raise ValueError(
+                "Unexpected Gemini generation "
+                f"arguments: {sorted(kwargs)}"
+            )
+
+        if not do_sample:
+            raise ValueError(
+                "Paper protocol requires stochastic "
+                "sampling; do_sample=False is not "
+                "supported for this experiment."
+            )
+
+        config = (
+            self._types.GenerateContentConfig(
+                candidate_count=1,
+                max_output_tokens=(
+                    max_new_tokens
+                ),
+                temperature=temperature,
+                top_p=top_p,
+            )
+        )
+
+        result = (
+            self.client.models.generate_content(
+                model=self.model_name,
+                contents=prompt.strip(),
+                config=config,
+            )
+        )
+
+        response = (
+            (result.text or "")
+            .strip()
+        )
+
+        if not response:
+            raise RuntimeError(
+                f"{self.agent_id} returned "
+                "an empty response."
+            )
+
+        return [
+            {
+                "generated_text": response
+            }
+        ]
+
+
+# ============================================================
+# Provider-aware loader
+# ============================================================
+
+def load_agents(
+    agent_specs: List[dict],
+):
+    """
+    Load a heterogeneous five-agent panel.
+
+    Each specification must contain:
+
+        {
+            "agent_id": "...",
+            "provider": "hf|anthropic|gemini",
+            "model_id": "..."
+        }
+
+    Hugging Face agents additionally require:
+
+        {
+            "device": 0
+        }
+
+    Example mixed/local agent:
+
+        {
+            "agent_id": "qwen",
+            "provider": "hf",
+            "model_id": "Qwen/...",
+            "device": 1
+        }
+
+    Example Claude agent:
+
+        {
+            "agent_id": "claude_1",
+            "provider": "anthropic",
+            "model_id": "<exact Claude model ID>"
+        }
+    """
+
+    if not agent_specs:
+        raise ValueError(
+            "agent_specs is empty."
+        )
+
+    agent_ids = [
+        spec.get("agent_id")
+        for spec in agent_specs
+    ]
+
+    if any(
+        not x
+        for x in agent_ids
+    ):
+        raise ValueError(
+            "Every agent specification "
+            "must contain agent_id."
+        )
+
+    if (
+        len(set(agent_ids))
+        != len(agent_ids)
+    ):
+        raise ValueError(
+            "Agent IDs must be unique."
+        )
 
     agents = {}
-    for repo, aid in zip(model_names, agent_ids):
-        device = device_map[aid]
+    local_model_cache = {}
 
-        # ✅ 识别 Qwen-like：依据 repo 判断（不要用 aid，aid 可能带 ::g1 后缀）
-        is_qwen_like = ("Qwen" in repo) or ("Distill-Qwen" in repo)
+    for spec in agent_specs:
+        aid = spec["agent_id"]
 
-        if is_qwen_like:
-            print(f"[INIT] Loading Qwen-like model: repo={repo} as id={aid} on cuda:{device}", flush=True)
-            agents[aid] = QwenAgent(repo, device=device)
+        provider = (
+            str(
+                spec.get(
+                    "provider",
+                    ""
+                )
+            )
+            .strip()
+            .lower()
+        )
+
+        model_id = str(
+            spec.get(
+                "model_id",
+                ""
+            )
+        ).strip()
+
+        model_id_env = str(
+            spec.get(
+                "model_id_env",
+                ""
+            )
+        ).strip()
+
+        if not model_id and model_id_env:
+            model_id = os.getenv(
+                model_id_env,
+                ""
+            ).strip()
+
+        if not model_id:
+            if model_id_env:
+                raise RuntimeError(
+                    f"Model ID for agent {aid} is not configured. "
+                    f"Set environment variable {model_id_env}."
+                )
+
+            raise ValueError(
+                f"Missing model_id for agent {aid}."
+            )
+
+        if not model_id:
+            raise ValueError(
+                f"Missing model_id for "
+                f"agent {aid}."
+            )
+
+        if provider in {
+            "hf",
+            "huggingface",
+        }:
+            if "device" not in spec:
+                raise ValueError(
+                    f"HF agent {aid} requires "
+                    "a device assignment."
+                )
+
+            device = int(
+                spec["device"]
+            )
+
+            cache_key = (
+                "hf",
+                model_id,
+                device,
+            )
+
+            if cache_key in local_model_cache:
+                agents[aid] = copy.copy(
+                    local_model_cache[
+                        cache_key
+                    ]
+                )
+                agents[aid].agent_id = aid
+
+                print(
+                    f"[REUSE] HF "
+                    f"agent={aid} "
+                    f"model={model_id} "
+                    f"device=cuda:{device}",
+                    flush=True,
+                )
+
+            else:
+                agents[aid] = HFAgent(
+                    model_name=model_id,
+                    device=device,
+                    agent_id=aid,
+                )
+
+                local_model_cache[
+                    cache_key
+                ] = agents[aid]
+
+                torch.cuda.empty_cache()
+
+        elif provider in {
+            "hf_multimodal",
+            "huggingface_multimodal",
+        }:
+            if "device" not in spec:
+                raise ValueError(
+                    f"HF multimodal agent {aid} "
+                    "requires a device assignment."
+                )
+
+            device = int(
+                spec["device"]
+            )
+
+            cache_key = (
+                "hf_multimodal",
+                model_id,
+                device,
+            )
+
+            if cache_key in local_model_cache:
+                agents[aid] = copy.copy(
+                    local_model_cache[
+                        cache_key
+                    ]
+                )
+                agents[aid].agent_id = aid
+
+                print(
+                    f"[REUSE] HF multimodal "
+                    f"agent={aid} "
+                    f"model={model_id} "
+                    f"device=cuda:{device}",
+                    flush=True,
+                )
+
+            else:
+                agents[aid] = HFMultimodalAgent(
+                    model_name=model_id,
+                    device=device,
+                    agent_id=aid,
+                )
+
+                local_model_cache[
+                    cache_key
+                ] = agents[aid]
+
+                torch.cuda.empty_cache()
+
+        elif provider in {
+            "anthropic",
+            "claude",
+        }:
+            agents[aid] = (
+                AnthropicAgent(
+                    model_name=model_id,
+                    agent_id=aid,
+                )
+            )
+
+        elif provider in {
+            "gemini",
+            "google",
+        }:
+            agents[aid] = (
+                GeminiAgent(
+                    model_name=model_id,
+                    agent_id=aid,
+                )
+            )
+
         else:
-            print(f"[INIT] Loading Standard model: repo={repo} as id={aid} on cuda:{device}", flush=True)
-            agents[aid] = StandardAgent(repo, device=device)
-
-        # 可选：降低后续加载峰值
-        torch.cuda.empty_cache()
+            raise ValueError(
+                f"Unsupported provider "
+                f"'{provider}' for agent "
+                f"{aid}."
+            )
 
     return agents
+
+
+# ============================================================
+# Backward-compatible HF loader
+# ============================================================
+
+def load_model_pipelines(
+    model_names: List[str],
+    device_map: Dict[str, int],
+    agent_ids: Optional[
+        List[str]
+    ] = None,
+):
+    """
+    Backward-compatible loader used by the current
+    rolling-review runner.
+
+    This wrapper loads Hugging Face agents only.
+
+    It will be replaced by load_agents() once
+    main_multi_model.py reads panel configuration files.
+    """
+
+    if agent_ids is None:
+        agent_ids = list(
+            model_names
+        )
+
+    if (
+        len(model_names)
+        != len(agent_ids)
+    ):
+        raise ValueError(
+            "model_names and agent_ids "
+            "must have identical lengths."
+        )
+
+    specs = []
+
+    for repo, aid in zip(
+        model_names,
+        agent_ids,
+    ):
+        if aid not in device_map:
+            raise KeyError(
+                f"Missing device for "
+                f"{aid}."
+            )
+
+        specs.append({
+            "agent_id": aid,
+            "provider": "hf",
+            "model_id": repo,
+            "device": int(
+                device_map[aid]
+            ),
+        })
+
+    return load_agents(specs)
