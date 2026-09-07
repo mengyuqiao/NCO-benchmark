@@ -226,7 +226,7 @@ def build_claude_judge_spec():
         "provider":
             "anthropic",
 
-        "model_id_env":
+        "model_id": 
             "claude-sonnet-4-6",
     }
 

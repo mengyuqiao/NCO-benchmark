@@ -24,6 +24,7 @@ Thumbs.db
 
 # Runtime logs
 *.log
+!results/compute_parity/full_grid.log
 
 # Temporary files
 *.tmp
