@@ -303,7 +303,7 @@ Example:
 
 ```bash
 python Batch/get_accuracy.py \
-  --results-root results \
+  --results-root <path-to-generated-main-experiment-results> \
   --gold-root Batch/questions \
   --expected-runs 10
 ```
