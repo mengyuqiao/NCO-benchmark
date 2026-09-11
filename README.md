@@ -563,7 +563,7 @@ NCO-benchmark/
 │   └── paper.yaml                  # Paper configuration summary
 │
 ├── results/
-│   ├── batch_specific/             # Batch-level supplementary results
+│   ├── raw/                        # experiments raw results
 │   └── compute_parity/             # Compute-enhanced baselines and raw outputs
 │
 ├── legacy/                         # Historical/development artifacts
