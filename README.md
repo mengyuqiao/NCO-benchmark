@@ -323,33 +323,66 @@ evaluation/
 
 ---
 
-## 7. Batch-specific supplementary results
+## 7. Raw model logs
 
-The manuscript reports performance over the complete 54-outcome benchmark within each independent run and then reports the mean and sample standard deviation across ten runs.
+To support full reproducibility, we release the raw model outputs used to compute all reported metrics.
 
-To make the batch-level variation transparent, the released supplementary workbook is:
-
-```text
-results/batch_specific/supplementary_results.xlsx
-```
-
-It contains the batch-specific results used to report:
+The raw logs are available under:
 
 ```text
-5 batches × 4 metrics
-= 20 batch-specific supplementary tables
+results/raw/
 ```
 
-The four metrics are:
+The directory is organized by model and evaluation batch:
 
 ```text
-F1
-Accuracy
-Precision
-Recall
+results/raw/
+├── Model1/
+│   ├── Batch1/
+│   ├── Batch2/
+│   ├── Batch3/
+│   ├── Batch4/
+│   └── Batch5/
+├── Model2/
+│   └── ...
+└── ...
 ```
 
-These batch-level tables are supplementary analyses and do not change the full-benchmark aggregation procedure used for the main reported metrics.
+Within each batch directory, five CSV files correspond to the five prompting conditions:
+
+```text
+medical_questions_1.csv
+medical_questions_2.csv
+medical_questions_3.csv
+medical_questions_4.csv
+medical_questions_5.csv
+```
+
+These correspond to:
+
+```text
+v1 = plain prompt
+v2 = system prompt
+v3 = 2-shot
+v4 = 5-shot
+v5 = 10-shot
+```
+
+Each CSV contains the following fields:
+
+```text
+batch
+version
+file
+question_id
+response_id
+answer
+```
+
+For each question, `response_id` ranges from 1 to 10 and represents the ten independent runs. The `answer` field contains the model's final binary prediction (`yes` or `no`).
+
+These raw logs provide the underlying model outputs from which the reported accuracy, precision, recall, and F1 scores can be reproduced.
+
 
 ---
 
